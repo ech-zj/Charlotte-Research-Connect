@@ -1,5 +1,11 @@
-# ITSC_4155
-Charlotte Research Connect Project
+# Charlotte Research Connect
+
+## Sprint 1
+* [Presentation Video](https://youtu.be/vQcjTLjSA3A)
+* [Google Slides](https://docs.google.com/presentation/d/1ZQmWnIYBMIlCcJ-WJqHauteEwe30q01cmo9-jEOsNs4/edit#slide=id.gf6b72cc394_0_0)
+* [User Stories](https://docs.google.com/spreadsheets/d/178Es_J5rGN5shpM4K5wY__VS9yBluQa7MdfE_j6xqgY/edit#gid=1200079538)
+* [Miro Lofi Page](https://miro.com/app/board/o9J_lsUM7k8=/)
+
 
 # Live Demo
 [Here](https://github.com/JokkerBang/ITSC_4155)
