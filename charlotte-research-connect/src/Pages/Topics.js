@@ -2,10 +2,11 @@ import React from 'react'
 import '../css/Home.css'
 import PageTemplate from './PageTemplate'
 
-function HomePage(props) {
+function TopicPage() {
     return (<>
-        <PageTemplate highLight='0' {...props} />
+        <PageTemplate highLight='1' />
+        <h1>Topic</h1>
     </>)
 }
 
-export default HomePage
+export default TopicPage

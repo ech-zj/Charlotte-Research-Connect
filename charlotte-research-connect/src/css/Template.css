@@ -1,0 +1,91 @@
+.App {
+    text-align: center;
+    overflow: hidden;
+    padding: 0px;
+    background-color: #2C2F33
+}
+
+.Content {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    padding: 0px;
+}
+
+.TopBar {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: absolute;
+    background-color: #1b1b1b67;
+}
+
+.TopBar p {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TopBar p:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.TopBar p:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.TopBar p.active {
+    color: #B9975B;
+}
+
+.TopBar p.active:after {
+    background: #B9975B;
+}
+
+.PageNav {
+    padding: 0;
+}
+
+.AccountNav {
+    padding: 0;
+}
+
+.Search {
+    padding: 0
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.body {
+    padding-bottom: 0px;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width: 620px) {}

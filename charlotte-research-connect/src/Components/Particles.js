@@ -3,11 +3,12 @@ import React from 'react'
 import Particles from 'react-tsparticles'
 
 export default (props) => {
+    console.log('in particles')
     return (
         <Particles
             width='100vw'
             height='100vh'
-            style={{ overflow: 'hidden' }}
+            style={{ overflow: 'hidden', position: 'absolute' }}
             options={{
                 background: {
                     color: {
@@ -41,10 +42,10 @@ export default (props) => {
                         value: 60,
                     },
                     color: {
-                        value: "#8730d9"
+                        value: '#046A38'
                     },
                     links: {
-                        color: "#99AAB5",
+                        color: "#B9975B",
                         distance: 50,
                         enable: true,
                         opacity: .5,

@@ -2,10 +2,11 @@ import React from 'react'
 import '../css/Home.css'
 import PageTemplate from './PageTemplate'
 
-function HomePage(props) {
+function AboutPage() {
     return (<>
-        <PageTemplate highLight='0' {...props} />
+        <PageTemplate highLight='3' />
+        <h1>About</h1>
     </>)
 }
 
-export default HomePage
+export default AboutPage
