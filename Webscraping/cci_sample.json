@@ -1,0 +1,543 @@
+{
+    "Laurel Yohe": [
+        "Bioinformatics and Genomics"
+    ],
+    "Wenhao Luo": [
+        "Computer Science"
+    ],
+    "Aleksandr Smirnov": [
+        "Bioinformatics and Genomics"
+    ],
+    "Zeinab Riazi": [
+        "Computer Science"
+    ],
+    "Amirmohammad Rooshenas": [
+        "Computer Science"
+    ],
+    "Constantin Bunescu": [
+        "Computer Science"
+    ],
+    "Richard White": [
+        "Bioinformatics and Genomics"
+    ],
+    "Jun Wang": [
+        "Bioinformatics and Genomics"
+    ],
+    "Alexis Dornburg": [
+        "Bioinformatics and Genomics"
+    ],
+    "Jeremy Jay": [
+        "Bioinformatics and Genomics"
+    ],
+    "Sterling McLeod": [
+        "Computer Science"
+    ],
+    "Pu Wang": [
+        "Computer Science"
+    ],
+    "Tonya Frevert": [
+        "Software & Information Systems"
+    ],
+    "Elizabeth Cooper": [
+        "Bioinformatics and Genomics"
+    ],
+    "Adam Whaley": [
+        "Bioinformatics and Genomics"
+    ],
+    "Gabriel Terejanu": [
+        "Computer Science"
+    ],
+    "Albert Park": [
+        "Software & Information Systems"
+    ],
+    "Marlon Mejias": [
+        "Software & Information Systems"
+    ],
+    "Jason Karp": [
+        "Computer Science"
+    ],
+    "Dong Dai": [
+        "Computer Science"
+    ],
+    "Qiong Cheng": [
+        "Computer Science"
+    ],
+    "Debarati Basu": [
+        "Software & Information Systems"
+    ],
+    "Audrey Rorrer": [
+        "Computer Science"
+    ],
+    "Elizabeth Johnson": [
+        "Computer Science"
+    ],
+    "Yonghong Yan": [
+        "Computer Science"
+    ],
+    "Liyue Fan": [
+        "Computer Science"
+    ],
+    "Angela Berardinelli": [
+        "Computer Science"
+    ],
+    "Tom Moyer": [
+        "Software & Information Systems"
+    ],
+    "Nicholas Davis": [
+        "Software & Information Systems"
+    ],
+    "Fatma Mili": [
+        "College of Computing & Informatics"
+    ],
+    "Siddharth Krishnan": [
+        "Computer Science"
+    ],
+    "Minwoo Lee": [
+        "Computer Science"
+    ],
+    "Jinpeng Wei": [
+        "Software & Information Systems"
+    ],
+    "Robert Reid": [
+        "Bioinformatics and Genomics"
+    ],
+    "Rebekah Rogers": [
+        "Bioinformatics and Genomics"
+    ],
+    "Samira Shaikh": [
+        "Computer Science"
+    ],
+    "Dazhao Cheng": [
+        "Computer Science"
+    ],
+    "Nadia Najjar": [
+        "Computer Science"
+    ],
+    "Lijuan Cao": [
+        "Software & Information Systems"
+    ],
+    "Julio Bahamon": [
+        "Computer Science"
+    ],
+    "Mary Maher": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "design",
+        "human-computer interaction",
+        "intelligent systems"
+    ],
+    "Xi Niu": [
+        "Software & Information Systems",
+        "data analytics",
+        "interactive information retrieval",
+        "search behavior"
+    ],
+    "Mohamed Shehab": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "access control",
+        "cyber security",
+        "databases",
+        "internet of things",
+        "medical informatics",
+        "mobile applications",
+        "mobile health",
+        "privacy",
+        "security",
+        "security analytics",
+        "social media",
+        "software engineering",
+        "web services"
+    ],
+    "Meera Sridhar": [
+        "Software & Information Systems",
+        "abstract interpretation",
+        "binary instrumentation",
+        "cyber-physical systems security",
+        "in-lined reference monitoring",
+        "language analysis",
+        "language design",
+        "language-based web security solutions",
+        "model-checking",
+        "program equivalence",
+        "program-proof co-development",
+        "security policies",
+        "tatic analysis"
+    ],
+    "Weichao Wang": [
+        "Software & Information Systems",
+        "advanced manufacturing system security",
+        "cloud computing environments",
+        "computer science",
+        "critical infrastructures",
+        "cyber-physical systems",
+        "education",
+        "internet of things",
+        "network security",
+        "pervasive systems",
+        "smart grid security",
+        "wireless networks"
+    ],
+    "Dale-Marie Wilson": [
+        "Software & Information Systems",
+        "affective computing",
+        "speech interface",
+        "virtual agents"
+    ],
+    "David Wilson": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "ai",
+        "human-computer interaction",
+        "machine learning"
+    ],
+    "Heather Lipford": [
+        "Software & Information Systems",
+        "usable privacy",
+        "usable security"
+    ],
+    "Norman Long": [
+        "Software & Information Systems",
+        "software and information systems"
+    ],
+    "Wlodek Zadrozny": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "computer science",
+        "deepQA",
+        "natural language understanding"
+    ],
+    "Bei-Tseng Chu": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "computer integrated manufacturing",
+        "cyber security",
+        "electronic commerce",
+        "enterprise integration",
+        "information privacy",
+        "information security"
+    ],
+    "Yaorong Ge": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "bioinformatics",
+        "data discovery",
+        "data mining",
+        "medical image analysis"
+    ],
+    "Alberto Gonzalez": [
+        "Software & Information Systems",
+        "bimanual interaction",
+        "creativity support tools",
+        "exploratory satisficing",
+        "interactive dance",
+        "interface explorability",
+        "novel interaction techniques",
+        "tangible interaction"
+    ],
+    "Mirsad Hadzikadic": [
+        "School of Data Science (SDS)",
+        "Software & Information Systems",
+        "analytics",
+        "complex systems",
+        "data mining",
+        "data science",
+        "education",
+        "health",
+        "health informatics",
+        "machine learning",
+        "outreach",
+        "social media",
+        "SOPHI"
+    ],
+    "Angelina Tzacheva": [
+        "Computer Science",
+        "big data analytics",
+        "data mining",
+        "databases",
+        "distributed databases",
+        "knowledge discovery",
+        "multimedia databases"
+    ],
+    "Zachary Wartell": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "human-computer interaction",
+        "visualization"
+    ],
+    "Jing Yang": [
+        "Computer Science",
+        "abstract data",
+        "application design",
+        "bioinformatics",
+        "cluster-based visual analytics and animations",
+        "design studies",
+        "finance",
+        "health",
+        "insight management visualization",
+        "interactions visualization",
+        "multidimensional data",
+        "network security",
+        "networks and hierarchies",
+        "sports",
+        "text documents",
+        "time-oriented data",
+        "trajectory data",
+        "visual analytics"
+    ],
+    "Kalpathi Subramanian": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "biomedical",
+        "human-computer interaction",
+        "interactive computer graphics",
+        "medical image analysis",
+        "visual learning",
+        "visualization"
+    ],
+    "M.Taghi Mostafavi": [
+        "Computer Science",
+        "biomedical instrumentation",
+        "ovarian cancer research"
+    ],
+    "Harini Ramaprasad": [
+        "Computer Science",
+        "embedded systems",
+        "preemptive systems",
+        "static timing analysis",
+        "task analysis"
+    ],
+    "Zbigniew Ras": [
+        "Computer Science",
+        "computer science"
+    ],
+    "Erik Saule": [
+        "Computer Science",
+        "academic recommendation systems",
+        "accelerators",
+        "algorithms and complexity",
+        "approximation algorithms",
+        "computational complexity",
+        "CS education",
+        "data mining",
+        "GPU",
+        "graph analysis",
+        "high-performance computing",
+        "middleware",
+        "network analysis",
+        "parallel and distributed computing",
+        "parallel architecture in computers",
+        "scheduling theory"
+    ],
+    "Sara Scott": [
+        "Computer Science",
+        "computer science"
+    ],
+    "Min Shin": [
+        "Computer Science",
+        "assistive technology",
+        "computer science",
+        "computer vision",
+        "gesture recognition",
+        "image analysis",
+        "image processing",
+        "motion analysis",
+        "object tracking",
+        "visual inspection"
+    ],
+    "Jianping Fan": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "image analysis",
+        "machine learning",
+        "social media",
+        "video analysis",
+        "visual recognition"
+    ],
+    "John Gero": [
+        "Computer Science",
+        "design cognition",
+        "design computing",
+        "design education"
+    ],
+    "Daniel Jugan": [
+        "Computer Science",
+        "computer science"
+    ],
+    "Aidong Lu": [
+        "Computer Science",
+        "data visualization",
+        "game analytics",
+        "graph analytics",
+        "immersive visualization",
+        "information visualization",
+        "mixed / augmented reality",
+        "scientific visualization",
+        "security visualizaiton",
+        "social network analysis",
+        "visual analytics"
+    ],
+    "Bojan Cukic": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "empirical software engineering",
+        "identity assurance",
+        "internet of things",
+        "outreach",
+        "privacy",
+        "resilient computing",
+        "smart cities"
+    ],
+    "Mohsen Dorodchi": [
+        "Computer Science",
+        "computer science"
+    ],
+    "Manuel A. P\u00e9rez Qui\u00f1ones": [
+        "College of Computing & Informatics",
+        "Software & Information Systems",
+        "diversity",
+        "educational uses of computers",
+        "human-computer interaction",
+        "personal information management"
+    ],
+    "William Tolone": [
+        "College of Computing & Informatics",
+        "Software & Information Systems",
+        "agent-based integration",
+        "agent-based modeling and simulation",
+        "analytics",
+        "collaborative systems",
+        "critical infrastructure protection",
+        "information environments",
+        "meta-level architectures",
+        "secure collaboration architectures"
+    ],
+    "Yongge Wang": [
+        "Software & Information Systems",
+        "computer science"
+    ],
+    "Wenwen Dou": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "data visualization",
+        "machine learning",
+        "science impact analysis",
+        "social media",
+        "text analytics",
+        "visual analytics"
+    ],
+    "Dewan Ahmed": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "distributed algorithms",
+        "distributed systems",
+        "games",
+        "multimedia communication",
+        "networks",
+        "real-time systems",
+        "simulation and modeling",
+        "surveillance systems"
+    ],
+    "Srinivas Akella": [
+        "Computer Science",
+        "School of Data Science (SDS)",
+        "automotive robotics",
+        "biochemical analyses",
+        "packaging applications",
+        "robotics"
+    ],
+    "Anthony Fodor": [
+        "Bioinformatics Research Center",
+        "bioinformatics",
+        "genomics"
+    ],
+    "Weijun Luo": [
+        "Bioinformatics Research Center",
+        "biomedical informatics",
+        "complex diseases",
+        "computational method development and implementation",
+        "high throughput genomic data analysis",
+        "personal genome computing",
+        "personalized medicine",
+        "systems biology"
+    ],
+    "Jessica Schlueter": [
+        "Bioinformatics Research Center",
+        "School of Data Science (SDS)",
+        "bioinformatics",
+        "gene sequencing",
+        "plant pathologies"
+    ],
+    "ZhengChang Su": [
+        "Bioinformatics and Genomics",
+        "computational inference of pathways",
+        "eukaryotic cells",
+        "metabolic pathways",
+        "prokaryotic cells",
+        "signaling pathways",
+        "single-cell transcriptome sequencing",
+        "transcriptional regulatory networks"
+    ],
+    "Way Sung": [
+        "Bioinformatics and Genomics"
+    ],
+    "Jennifer Weller": [
+        "Bioinformatics and Genomics",
+        "nucleic acids"
+    ],
+    "Jun-tao Guo": [
+        "Bioinformatics and Genomics",
+        "alternative splicing",
+        "oxidative stress",
+        "protein structure prediction",
+        "protein-dna interactions",
+        "regulatory pathway"
+    ],
+    "Daniel Janies": [
+        "Bioinformatics and Genomics",
+        "School of Data Science (SDS)",
+        "bioinformatics",
+        "computational biology",
+        "data discovery",
+        "data mining",
+        "gene sequencing",
+        "pathogen tracking"
+    ],
+    "Ann Loraine": [
+        "Bioinformatics and Genomics"
+    ],
+    "Lawrence Mays": [
+        "Bioinformatics and Genomics",
+        "School of Data Science (SDS)",
+        "bioinformatics"
+    ],
+    "Susan Sell": [
+        "Bioinformatics and Genomics",
+        "computational analysis",
+        "diabetes genomics",
+        "expression-based biomarkers",
+        "shared functional domain prediction",
+        "tumor genomics"
+    ],
+    "Cory Brouwer": [
+        "Bioinformatics and Genomics",
+        "School of Data Science (SDS)",
+        "bioinformatics",
+        "computational biology",
+        "gene sequencing",
+        "plant pathology"
+    ],
+    "Xiuxia Du": [
+        "Bioinformatics and Genomics",
+        "computational metabolomics",
+        "computational proteomics"
+    ],
+    "Cynthia Gibas": [
+        "Bioinformatics and Genomics",
+        "genomics",
+        "pathogen genetics",
+        "software",
+        "transcriptomics",
+        "visualization"
+    ]
+}

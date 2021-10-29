@@ -1,6 +1,7 @@
 
 from bs4 import BeautifulSoup
 import requests
+import json
 
 def get_names_and_topics(link):
     html_response = requests.get(link)
@@ -26,6 +27,7 @@ def get_names_and_topics(link):
             print('nah')
     return names_and_topics
 
+outputCciDict = dict()
 page_exists = True
 page_num = 1
 while page_exists:
@@ -36,9 +38,15 @@ while page_exists:
         if not cool_stuff:
             page_exists = False
             continue
+        else:
+            outputCciDict.update(cool_stuff)
         print('page %d' % page_num)
         print(cool_stuff)
         page_num += 1
     except:
         print('pages found %d' % page_num)
         page_exists = False
+
+json_object = json.dumps(outputCciDict, indent=4)
+with open('cci_sample.json', 'w') as outfile:
+    outfile.write(json_object)
