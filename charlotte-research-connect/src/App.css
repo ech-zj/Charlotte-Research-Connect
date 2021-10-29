@@ -1,0 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: white;
+    -ms-overflow-style: none;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

@@ -1,8 +1,12 @@
 .App {
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
     overflow: hidden;
     padding: 0px;
-    background-color: #2C2F33
+    background-color: #2C2F33;
 }
 
 .Content {
@@ -15,6 +19,7 @@
 .TopBar {
     top: 0;
     left: 0;
+    height:3rem;
     width: 100vw;
     display: flex;
     justify-content: space-between;

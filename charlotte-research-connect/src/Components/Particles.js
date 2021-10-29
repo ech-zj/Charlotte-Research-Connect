@@ -2,13 +2,12 @@
 import React from 'react'
 import Particles from 'react-tsparticles'
 
-export default (props) => {
-    console.log('in particles')
+export default () => {
     return (
         <Particles
             width='100vw'
             height='100vh'
-            style={{ overflow: 'hidden', position: 'absolute' }}
+            style={{ overflow: 'hidden' }}
             options={{
                 background: {
                     color: {

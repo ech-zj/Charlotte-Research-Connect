@@ -1,16 +1,28 @@
-.HomePage {
+.TopicsPage {
     position: absolute;
     top: 3rem;
     left: 0;
     width: 100vw;
 }
 
-.Visualization {
+.TopicsContainer {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.Topic {
+    margin: 1rem;
+    padding: 1rem;
+    transition: ease-in-out .25s;
+}
+
+.Topic:hover {
+    background-color: #B9975B;
+    transition: ease-in-out .25s;
+    border-radius: 2rem;
 }
 
 .break {
