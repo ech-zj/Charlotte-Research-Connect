@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './Pages/Home';
 import TopicsPage from './Pages/Topics'
 import FacultyPage from './Pages/Faculty';
-import AboutPage from './Pages/About'
+import AboutPage from './Pages/About';
 
 // CSS Imports
 import './App.css';

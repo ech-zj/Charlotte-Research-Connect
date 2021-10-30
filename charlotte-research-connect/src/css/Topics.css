@@ -16,7 +16,9 @@
 .Topic {
     margin: 1rem;
     padding: 1rem;
+    border-radius: 1rem;
     transition: ease-in-out .25s;
+    cursor: pointer;
 }
 
 .Topic:hover {

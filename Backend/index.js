@@ -5,13 +5,17 @@ const https = require('https')
 const http = require('http')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
+const mysql = require('mysql')
 
 // Globals
 const app = express()
 const router = express.Router()
 
 // Connect To DB
-// TBD
+const pool = mysql.createPool({
+    ...require('./settings.json').dbInfo,
+    connectionLimit: 25
+})
 
 // Start Up API
 console.log('Starting API')
@@ -43,6 +47,12 @@ app.use((req, res, next) => {
 // Ex:
 // app.use('/route', require('./routes/RouteFile'))
 // points localhost:80/route -> ./routes/RouteFile
+app.use('/topics', require('./routes/Topics'))
+
 
 const httpServer = http.createServer(app)
 httpServer.listen(require('./settings.json').port)
+
+module.exports = {
+    pool
+}

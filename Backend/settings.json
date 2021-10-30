@@ -1,3 +1,8 @@
 {
-    "port": "80"
+    "port": "1313",
+    "dbInfo": {
+        "host": "",
+        "user": "",
+        "password": ""
+    }
 }

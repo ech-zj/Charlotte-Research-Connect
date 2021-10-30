@@ -8,7 +8,7 @@ function PageTemplate(props) {
     const history = useHistory()
     return (
         <div className="App">
-            <ParticlesElement />
+            <ParticlesElement  {...props} />
             <CookieConsent background={'#000'} color={'#fff'}>This site uses cookies</CookieConsent>
             <div className='TopBar'>
                 <div className='AccountNav'>

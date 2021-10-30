@@ -11,3 +11,12 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.App {
+    left: 0;
+    top: 0;
+    max-width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    background: '#1a1a1a'
+}
