@@ -10,13 +10,9 @@ function TopicPage(props) {
 
     useEffect(() => {
         const getTopics = async () => {
-            const data = await axios.get(`${settings.APIBase}/topics/overview`)
+            const data = await axios.get(`${settings.DevEnv ? settings.NoSSL : settings.APIBase}/topics/overview`)
                 .catch(er => { return { isErrored: true, er } })
-            if (data.isErrored || !data.data || !data.data.data) {
-                //setTopics({ errored: true }) 
-                // This is what it will be on prod, but in case you dont have the API running...
-                setTopics([{ text: "Art", code: "art" }, { text: "Anatomy", code: "anatomy" }, { text: "Biochemistry", code: "biochemistry" }, { text: "Civil Engineering", code: "civil_engineering" }, { text: "Chemistry", code: "chemistry" }, { text: "Computer Science", code: "computer_science" }, { text: "Electrical Engineering", code: "electrical_engineering" }, { text: "English", code: "english" }, { text: "Geology", code: "geology" }, { text: "History", code: "history" }, { text: "Mathematics", code: "mathemtics" }, { text: "Physics", code: "phsyics" }, { text: "Sociology", code: "sociology" },])
-            }
+            if (data.isErrored || !data.data || !data.data.data) setTopics({ errored: true })
             else setTopics(data.data.data)
         }
         getTopics()
@@ -34,16 +30,18 @@ function TopicPage(props) {
             <div className='TopicsContainer'>
                 <h1 style={{ cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null) }}>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
                 <div className='break' />
-                {selectedTopic ? <>
-                    <hr style={{ margin: '1rem', width: '60vw' }} />
-                    <div className='break' />
-                    <h1>You Selected {selectedTopic}</h1>
-                    <div className='break' />
-                    <h1>This implementation will be coming soon</h1>
-                </> :
-                    topics.map(t => {
-                        return renderTopic(t)
-                    })
+                {topics.errored ?
+                    <h2>Error Getting Topics</h2> :
+                    selectedTopic ? <>
+                        <hr style={{ margin: '1rem', width: '60vw' }} />
+                        <div className='break' />
+                        <h1>You Selected {selectedTopic}</h1>
+                        <div className='break' />
+                        <h1>This implementation will be coming soon</h1>
+                    </> :
+                        topics.map(t => {
+                            return renderTopic(t)
+                        })
                 }
             </div>
         </div>

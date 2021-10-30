@@ -1,3 +1,5 @@
 {
-    "APIBase": "http://localhost:1313"
+    "DevEnv": true,
+    "APIBase": "https://a.vibot.tech:1313",
+    "NoSSL": "http://a.vibot.tech:1314"
 }

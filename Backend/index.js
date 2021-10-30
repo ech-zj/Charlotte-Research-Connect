@@ -49,9 +49,17 @@ app.use((req, res, next) => {
 // points localhost:80/route -> ./routes/RouteFile
 app.use('/topics', require('./routes/Topics'))
 
-
+try {
+    const httpsServer = https.createServer({
+        key: fs.readFileSync('./public/privkey.pem', 'utf8'),
+        cert: fs.readFileSync('./public/cert.pem', 'utf8')
+    }, app)
+    httpsServer.listen(require('./settings.json').port)
+} catch (er) {
+    console.log('Couldn\'t Start HTTPS Server')
+}
 const httpServer = http.createServer(app)
-httpServer.listen(require('./settings.json').port)
+httpServer.listen(require('./settings.json').httpPort)
 
 module.exports = {
     pool
