@@ -8,7 +8,7 @@ function AboutPage() {
         <div className='AboutPage'>
             <div className='AboutContainer'>
                 <div style={{ display: 'flex', flexWrap: 'wrap', width: '50vw' }}>
-                    <h1 style={{ textDecoration: 'underline' }}>We are Charlotte Research Connect</h1>
+                    <h1 style={{  textAlign: 'center', fontWeight: '300'}}>We are Charlotte Research Connect</h1>
                     <br />
                     <h2>UNCC has a collection of research and data collected throughout the years, but there is no method of viewing and sorting researchers based on their topics and data.</h2>
                     <br />

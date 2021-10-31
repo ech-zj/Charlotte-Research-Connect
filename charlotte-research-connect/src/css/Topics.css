@@ -22,9 +22,9 @@
 }
 
 .Topic:hover {
-    background-color: #B9975B;
+    background-color: #B9975B67;
     transition: ease-in-out .25s;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .break {

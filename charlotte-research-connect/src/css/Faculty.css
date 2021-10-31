@@ -15,15 +15,21 @@
 
 .FacultyBox {
     margin: 1rem;
-    padding: '1rem';
-    width: 30vw;
-    background: 'black';
+    padding: 1rem;
+    background: #1b1b1b67;
     border-radius: 2rem;
     text-align: center;
+    cursor: pointer;
+    transition: ease-in-out .25s;
 }
 
 .FacultyBox * {
-    margin: .5rem;
+    margin: .5rem 2rem;
+}
+
+.FacultyBox:hover {
+    background: #B9975B67;
+    transition: ease-in-out .25s;
 }
 
 .break {
