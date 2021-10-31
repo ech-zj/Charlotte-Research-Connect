@@ -48,6 +48,8 @@ app.use((req, res, next) => {
 // app.use('/route', require('./routes/RouteFile'))
 // points localhost:80/route -> ./routes/RouteFile
 app.use('/topics', require('./routes/Topics'))
+app.use('/user', require('./routes/User'))
+app.use('/faculty', require('./routes/Faculty'))
 
 try {
     const httpsServer = https.createServer({
