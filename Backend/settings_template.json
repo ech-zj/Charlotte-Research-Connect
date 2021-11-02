@@ -1,0 +1,10 @@
+{
+    "port": "1313",
+    "httpPort": "1314",
+    "dbInfo": {
+        "host": "",
+        "user": "",
+        "password": "",
+        "database": ""
+    }
+}
