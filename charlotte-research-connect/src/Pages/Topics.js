@@ -12,15 +12,15 @@ function TopicPage(props) {
         const getTopics = async () => {
             const data = await axios.get(`${settings.DevEnv ? settings.NoSSL : settings.APIBase}/topics/overview`)
                 .catch(er => { return { isErrored: true, er } })
-            if (data.isErrored || !data.data || !data.data.data) setTopics({ errored: true })
-            else setTopics(data.data.data)
+            if (data.isErrored || !data.data) setTopics({ errored: true })
+            else setTopics(data.data)
         }
         getTopics()
     }, [])
 
     const renderTopic = (topic) => {
         return (
-            <h2 className='Topic' onClick={() => { setSelectedTopic(topic.code) }}>{topic.text}</h2>
+            <h2 key={topic.id} className='Topic' onClick={() => { setSelectedTopic(topic.label) }}>{topic.label}</h2>
         )
     }
 
@@ -28,7 +28,10 @@ function TopicPage(props) {
         <PageTemplate {...props} highLight='1' />
         <div className='TopicsPage'>
             <div className='TopicsContainer'>
-                <h1 style={{ cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null) }}>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
+                <div style={{ display: 'inline-flex', alignItems: 'center', cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null) }}>
+                    {selectedTopic ? <i class="material-icons" style={{ paddingRight: '.5rem' }}>arrow_back</i> : <></>}
+                    <h1>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
+                </div>
                 <div className='break' />
                 {topics.errored ?
                     <h2>Error Getting Topics</h2> :
@@ -36,7 +39,7 @@ function TopicPage(props) {
                         <hr style={{ margin: '1rem', width: '60vw' }} />
                         <div className='break' />
                         <h1>You Selected {selectedTopic}</h1>
-                        <div className='break' />
+                        <div className='break' style={{paddingTop: '3   rem'}} />
                         <h1>This implementation will be coming soon</h1>
                     </> :
                         topics.map(t => {

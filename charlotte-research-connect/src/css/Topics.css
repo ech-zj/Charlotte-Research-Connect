@@ -1,4 +1,6 @@
 .TopicsPage {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 3rem;
     left: 0;
@@ -6,6 +8,7 @@
 }
 
 .TopicsContainer {
+    width: 80vw;
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -30,4 +33,10 @@
 .break {
     flex-basis: 100%;
     height: 0;
+}
+
+@media screen and (max-width: 620px) {
+    .TopicsContainer {
+        width: 95vw;
+    }
 }
