@@ -6,15 +6,25 @@ const http = require('http')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
 const mysql = require('mysql')
+const { pathToFileURL } = require('url')
 
 // Globals
 const app = express()
-const router = express.Router()
 
 // Connect To DB
 const pool = mysql.createPool({
     ...require('./settings.json').dbInfo,
     connectionLimit: 25
+})
+
+pool.on('connection', () => {
+    console.log(`DB Conneciton Made`)
+    
+});
+
+pool.query('SELECT 1+1 as solution', (err, res) => {
+    if (err) console.log(err)
+    console.log(res)
 })
 
 // Start Up API
@@ -29,10 +39,10 @@ app.use(cors())
 
 // Create Rate Limit
 const apiLimit = rateLimit({
-    windowMs: 5 * 1000, //10 seconds
+    windowMs: 5 * 1000, //5 seconds
     max: 50 //50 requests
 })
-app.use('/a/', apiLimit)
+app.use('/', apiLimit)
 
 // Request Logging
 app.use((req, res, next) => {

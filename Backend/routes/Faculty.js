@@ -1,8 +1,8 @@
 const express = require('express')
 const Router = express.Router()
 const tokenParsing = require('../lib/tokenParsing')
-const { pool } = require('../index')
 
+// Temporarily hard coded, will move to DB soon
 const Faculty = [
     {
         name: 'Thomas Carr',
@@ -37,6 +37,7 @@ const Faculty = [
 ]
 
 Router.get('/all', async (req, res) => {
+    const { pool } = require('../index')
     // Get topics from DB
 
     // DB TBI
