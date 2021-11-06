@@ -1,8 +1,8 @@
 {
-  "name": "backend",
+  "name": "webscraping",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Scrape.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
-    "cheerio": "^1.0.0-rc.10",
-    "cors": "^2.8.5",
-    "express-rate-limit": "^5.5.0",
-    "express.js": "^1.0.0",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.14"
+    "cheerio": "^1.0.0-rc.10"
   }
 }
