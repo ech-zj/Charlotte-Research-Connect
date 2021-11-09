@@ -2,6 +2,8 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import CookieConsent from "react-cookie-consent";
 import ParticlesElement from '../Components/Particles';
+import PersonIcon from '@mui/icons-material/Person';
+import SearchIcon from '@mui/icons-material/Search';
 import '../css/Template.css';
 
 function PageTemplate(props) {
@@ -12,7 +14,7 @@ function PageTemplate(props) {
             <CookieConsent background={'#000'} color={'#fff'}>This site uses cookies</CookieConsent>
             <div className='TopBar'>
                 <div className='AccountNav'>
-                    <p>Account</p>
+                    <PersonIcon />
                 </div>
                 <div className='PageNav'>
                     <p className={props.highLight === '0' ? 'active' : ''} onClickCapture={(e) => history.push('/')}>Home</p>
@@ -21,7 +23,7 @@ function PageTemplate(props) {
                     <p className={props.highLight === '3' ? 'active' : ''} onClickCapture={(e) => history.push('/about')}>About</p>
                 </div>
                 <div className='Search'>
-                    <p>Search</p>
+                    <SearchIcon size='2rem' />
                 </div>
             </div>
         </div >

@@ -23,6 +23,7 @@
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     position: absolute;
     background-color: #1b1b1b67;
@@ -70,10 +71,12 @@
 }
 
 .AccountNav {
+    margin: 1rem;
     padding: 0;
 }
 
 .Search {
+    margin:1rem;
     padding: 0
 }
 
