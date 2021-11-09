@@ -81,6 +81,12 @@ def get_faculty_names_dict(link):
     outputDict, total_pages = get_all_pages(link, containerParams)
     return outputDict, total_pages
 
+def get_soup(link):
+    html_response = requests.get(link)
+    html_text = html_response.content
+    soup = BeautifulSoup(html_text, 'lxml')
+    return soup
+
 def get_all_pages(link, pageScrapeConfig):
     '''
     :param str link:
@@ -92,9 +98,7 @@ def get_all_pages(link, pageScrapeConfig):
     while page_exists:
         link_to_page = '%s%d/' % (link, page_num)
         try:
-            html_response = requests.get(link_to_page)
-            html_text = html_response.content
-            soup = BeautifulSoup(html_text, 'lxml')
+            get_soup(link_to_page)
             page_results_dict = get_page_dict_outer(soup, pageScrapeConfig)
             if len(page_results_dict) < 1:
                 page_exists = False
@@ -108,9 +112,9 @@ def get_all_pages(link, pageScrapeConfig):
             page_exists = False
     return allPagesDict, page_num-1 # total pages
 
-def make_json(jsonData):
+def make_json(name, jsonData):
     json_object = json.dumps(jsonData, indent=4)
-    with open('sample.json', 'w') as outfile:
+    with open('%s.json' % name, 'w') as outfile:
         outfile.write(json_object)
 
 def main():
@@ -118,7 +122,7 @@ def main():
     for college_abbr in COLLEGE_ABBRS:
         colleges_dict[college_abbr], total_pages = createCollegeDict(college_abbr)
         print(' college:\t%s\n total pages:\t%d' % (college_abbr, total_pages))
-    make_json(colleges_dict)
+    make_json('sample', colleges_dict)
 
 if __name__ == '__main__':
     main()
