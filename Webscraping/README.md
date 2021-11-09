@@ -1,4 +1,4 @@
-### Latest Web Scraping Results 2021-11-07
+### Latest Web Scraping Results 2021-11-08
 
 |college_abbr|total_pages|
 | ----------- | ----------- |

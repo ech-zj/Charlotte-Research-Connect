@@ -5,42 +5,59 @@ import json
 
 COLLEGE_ABBRS = ['college-of-business', 'college-of-arts-and-architecture', 'cci', 'coed', 'chhs', 'clas', 'college-of-engineering', 'school-of-data-science-sds']
 
-def get_elements(soup, key_container_and_type, val_containers_and_types, vals_are_sublinks):
+class ContainerDict:
+    def __init__(self, containerParams):
+        self.tag = containerParams['tag']
+        self.class_ = containerParams['class_']
+
+class PageScrapeConfig:
+    def __init__(self, containerParams):
+        ''' 
+        :param str key_container: key html 'tag' type and 'class_' 
+        :param dict val_containers: list of dicts with 'tag' and 'class_' converted to ContainerDict object
+        :param bool vals_are_sublinks: true if vals are hyperlinks within container
+        :param bool outer_container: if there is an outer container for keys and vals this is that container's html 'tag' type and 'class_'
+        '''
+        self.key_container = ContainerDict(containerParams['key_container'])
+        self.val_containers = [ContainerDict(val_params) for val_params in containerParams['val_containers']]
+        self.vals_are_sublinks = False if not 'vals_are_sublinks' in containerParams else containerParams['vals_are_sublinks']
+        self.outer_container = False if not 'outer_container' in containerParams else ContainerDict(containerParams['outer_container'])
+
+def get_elements(soup, pageScrapeConfig):
     try:
-        key = soup.find(key_container_and_type[0], class_ = key_container_and_type[1]).text
+        key = soup.find(pageScrapeConfig.key_container.tag, class_ = pageScrapeConfig.key_container.class_).text
         vals = []
-        if vals_are_sublinks:
-            for val_type in val_containers_and_types:
-                val_container = soup.find(val_type[0], class_=val_type[1])
-                for val in val_container.find_all('a'):
+        if pageScrapeConfig.vals_are_sublinks:
+            for val_container in pageScrapeConfig.val_containers:
+                val_soup = soup.find(val_container.tag, class_=val_container.class_)
+                for val in val_soup.find_all('a'):
                     if val.text:
                         vals.append(val.text)
         else:
-            for val_type in val_containers_and_types:
-                for val in soup.find_all(val_type[0], class_=val_type[1]):
+            for val_container in val_containers_and_types:
+                for val in soup.find_all(val_container.tag, class_=val_container.class_):
                     if val.text:
                         vals.append(val.text)
         return key, vals
-    except:
+    except Exception as e:
         print('nah')
+        print(e)
         return False, False
 
-def get_page_dict_outer(soup, key_container_and_type, val_containers_and_types, vals_are_sublinks=False, outer_container_and_type = False):
+def get_page_dict_outer(soup, pageScrapeConfig):
     '''
-    :type outer_container_and_type: tuple<str> 
-    :type key_container_and_type: tuple<str>
-    :type val_containers_and_types: list<tuple<str>>
-    tuple<str> for each of the above params are (html object type, class)
+    :param BeautifulSoup soup:
+    :param PageScrapeConfig pageScrapeConfig:
     '''
     pageDict = dict()
-    if outer_container_and_type:
-        outer_containers = soup.find_all(outer_container_and_type[0], class_ = outer_container_and_type[1])
+    if pageScrapeConfig.outer_container:
+        outer_containers = soup.find_all(pageScrapeConfig.outer_container.tag, class_ = pageScrapeConfig.outer_container.class_)
         for div in outer_containers:
-            key, vals = get_elements(div, key_container_and_type, val_containers_and_types, vals_are_sublinks)
+            key, vals = get_elements(div, pageScrapeConfig)
             if key and vals:
                 pageDict[key] = vals
     else:
-        key, vals = get_elements(soup, key_container_and_type, val_containers_and_types, vals_are_sublinks)
+        key, vals = get_elements(soup, pageScrapeConfig)
         if key and vals:
             pageDict[key] = vals
     return pageDict
@@ -50,18 +67,24 @@ def createCollegeDict(college_abbr):
     return get_faculty_names_dict(link_to_pages)
 
 def get_faculty_names_dict(link):
-    name_container_and_type = ('h2', 'entry-title')
-    val_containers_and_types = [('div', 'connection-links-container'), ('div', 'connection-groups')]
-    outer_container_and_type = ('div', 'post connection')
-    outputDict, total_pages = get_all_pages(link, name_container_and_type, val_containers_and_types, True, outer_container_and_type)
+    group = {'tag':'div', 'class_':'connection-links-container'}
+    interests = {'tag':'div', 'class_':'connection-groups'}
+    name = {'tag':'div', 'class_':'connection-groups'}
+    outer_container = {'tag':'div', 'class_':'post connection'}
+    params = {
+        'key_container': name,
+        'val_containers': [group, interests],
+        'vals_are_sublinks': True,
+        'outer_container': outer_container
+        }
+    containerParams = PageScrapeConfig(params)
+    outputDict, total_pages = get_all_pages(link, containerParams)
     return outputDict, total_pages
 
-def get_all_pages(link, key_container_and_type, val_containers_and_types, vals_are_sublinks=False, outer_container_and_type = False):
+def get_all_pages(link, pageScrapeConfig):
     '''
-    :type outer_container_and_type: tuple<str> 
-    :type key_container_and_type: tuple<str>
-    :type val_containers_and_types: list<tuple<str>>
-    tuple<str> for each of the above params are (html object type, class)
+    :param str link:
+    :param PageScrapeConfig pageScrapeConfig:
     '''
     page_exists = True
     page_num = 1
@@ -72,15 +95,16 @@ def get_all_pages(link, key_container_and_type, val_containers_and_types, vals_a
             html_response = requests.get(link_to_page)
             html_text = html_response.content
             soup = BeautifulSoup(html_text, 'lxml')
-            page_results_dict = get_page_dict_outer(soup, key_container_and_type, val_containers_and_types, vals_are_sublinks, outer_container_and_type)
+            page_results_dict = get_page_dict_outer(soup, pageScrapeConfig)
             if len(page_results_dict) < 1:
                 page_exists = False
                 continue
             else:
                 allPagesDict.update(page_results_dict)
             page_num += 1
-        except:
-            print('pages found %d' % page_num-1)
+        except Exception as e:
+            print('pages found %d' % (page_num-1))
+            print(e)
             page_exists = False
     return allPagesDict, page_num-1 # total pages
 
