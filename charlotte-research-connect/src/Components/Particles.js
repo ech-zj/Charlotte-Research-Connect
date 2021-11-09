@@ -20,39 +20,32 @@ export default () => {
                     events: {
                         onHover: {
                             enable: true,
-                            mode: "attract"
-                        },
-                        onClick: {
-                            enabled: true,
-                            mode: 'attract'
-                        }
-                    },
-                    modes: {
-                        attract: {
-                            quantity: .1
-                        },
-                        grab: {
-                            distance: 150
+                            mode: [],
+                            parallax: {
+                                enable: true,
+                                force: 20,
+                                smooth: 10,
+                            }
                         }
                     }
                 },
                 particles: {
                     number: {
-                        value: 60,
+                        value: 75,
                     },
                     color: {
                         value: '#046A38'
                     },
                     links: {
                         color: "#B9975B",
-                        distance: 50,
+                        distance: 250,
                         enable: true,
                         opacity: .5,
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: .3,
+                        speed: 2,
                         direction: 'random',
                         random: true
                     },
