@@ -3,50 +3,122 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-def get_names_and_topics(link):
-    html_response = requests.get(link)
-    html_text = html_response.content
-    soup = BeautifulSoup(html_text, 'lxml')
-    people_divs = soup.find_all('div', class_ = 'post connection')
-    names_and_topics = dict()
-    for div in people_divs:
-        try:
-            name = div.find('h2', class_ = 'entry-title').text
-            topics_div = div.find('div', class_ = 'connection-links-container')
-            groups_div = div.find('div', class_ = 'connection-groups')
-            groups = []
-            topics = []
-            for topic in topics_div.find_all('a'):
-                if topic.text:
-                    topics.append(topic.text)
-            for group in groups_div.find_all('a'):
-                if group.text:
-                    groups.append(group.text)
-            names_and_topics[name] = groups+topics
-        except:
-            print('nah')
-    return names_and_topics
+COLLEGE_ABBRS = ['college-of-business', 'college-of-arts-and-architecture', 'cci', 'coed', 'chhs', 'clas', 'college-of-engineering', 'school-of-data-science-sds']
 
-outputCciDict = dict()
-page_exists = True
-page_num = 1
-while page_exists:
+class ContainerDict:
+    def __init__(self, containerParams):
+        self.tag = containerParams['tag']
+        self.class_ = containerParams['class_']
+
+class PageScrapeConfig:
+    def __init__(self, containerParams):
+        ''' 
+        :param str key_container: key html 'tag' type and 'class_' 
+        :param dict val_containers: list of dicts with 'tag' and 'class_' converted to ContainerDict object
+        :param bool vals_are_sublinks: true if vals are hyperlinks within container
+        :param bool outer_container: if there is an outer container for keys and vals this is that container's html 'tag' type and 'class_'
+        '''
+        self.key_container = ContainerDict(containerParams['key_container'])
+        self.val_containers = [ContainerDict(val_params) for val_params in containerParams['val_containers']]
+        self.vals_are_sublinks = False if not 'vals_are_sublinks' in containerParams else containerParams['vals_are_sublinks']
+        self.outer_container = False if not 'outer_container' in containerParams else ContainerDict(containerParams['outer_container'])
+
+def get_elements(soup, pageScrapeConfig):
     try:
-        link = 'https://pages.charlotte.edu/connections/group/cci/page/%d/' % page_num
-        requests.get(link)
-        cool_stuff = get_names_and_topics(link)
-        if not cool_stuff:
-            page_exists = False
-            continue
+        key = soup.find(pageScrapeConfig.key_container.tag, class_ = pageScrapeConfig.key_container.class_).text
+        vals = []
+        if pageScrapeConfig.vals_are_sublinks:
+            for val_container in pageScrapeConfig.val_containers:
+                val_soup = soup.find(val_container.tag, class_=val_container.class_)
+                for val in val_soup.find_all('a'):
+                    if val.text:
+                        vals.append(val.text)
         else:
-            outputCciDict.update(cool_stuff)
-        print('page %d' % page_num)
-        print(cool_stuff)
-        page_num += 1
-    except:
-        print('pages found %d' % page_num)
-        page_exists = False
+            for val_container in val_containers_and_types:
+                for val in soup.find_all(val_container.tag, class_=val_container.class_):
+                    if val.text:
+                        vals.append(val.text)
+        return key, vals
+    except Exception as e:
+        print('nah')
+        print(e)
+        return False, False
 
-json_object = json.dumps(outputCciDict, indent=4)
-with open('cci_sample.json', 'w') as outfile:
-    outfile.write(json_object)
+def get_page_dict_outer(soup, pageScrapeConfig):
+    '''
+    :param BeautifulSoup soup:
+    :param PageScrapeConfig pageScrapeConfig:
+    '''
+    pageDict = dict()
+    if pageScrapeConfig.outer_container:
+        outer_containers = soup.find_all(pageScrapeConfig.outer_container.tag, class_ = pageScrapeConfig.outer_container.class_)
+        for div in outer_containers:
+            key, vals = get_elements(div, pageScrapeConfig)
+            if key and vals:
+                pageDict[key] = vals
+    else:
+        key, vals = get_elements(soup, pageScrapeConfig)
+        if key and vals:
+            pageDict[key] = vals
+    return pageDict
+
+def createCollegeDict(college_abbr):
+    link_to_pages = 'https://pages.charlotte.edu/connections/group/%s/page/' % college_abbr
+    return get_faculty_names_dict(link_to_pages)
+
+def get_faculty_names_dict(link):
+    group = {'tag':'div', 'class_':'connection-links-container'}
+    interests = {'tag':'div', 'class_':'connection-groups'}
+    name = {'tag':'div', 'class_':'connection-groups'}
+    outer_container = {'tag':'div', 'class_':'post connection'}
+    params = {
+        'key_container': name,
+        'val_containers': [group, interests],
+        'vals_are_sublinks': True,
+        'outer_container': outer_container
+        }
+    containerParams = PageScrapeConfig(params)
+    outputDict, total_pages = get_all_pages(link, containerParams)
+    return outputDict, total_pages
+
+def get_all_pages(link, pageScrapeConfig):
+    '''
+    :param str link:
+    :param PageScrapeConfig pageScrapeConfig:
+    '''
+    page_exists = True
+    page_num = 1
+    allPagesDict = dict()
+    while page_exists:
+        link_to_page = '%s%d/' % (link, page_num)
+        try:
+            html_response = requests.get(link_to_page)
+            html_text = html_response.content
+            soup = BeautifulSoup(html_text, 'lxml')
+            page_results_dict = get_page_dict_outer(soup, pageScrapeConfig)
+            if len(page_results_dict) < 1:
+                page_exists = False
+                continue
+            else:
+                allPagesDict.update(page_results_dict)
+            page_num += 1
+        except Exception as e:
+            print('pages found %d' % (page_num-1))
+            print(e)
+            page_exists = False
+    return allPagesDict, page_num-1 # total pages
+
+def make_json(jsonData):
+    json_object = json.dumps(jsonData, indent=4)
+    with open('sample.json', 'w') as outfile:
+        outfile.write(json_object)
+
+def main():
+    colleges_dict = dict.fromkeys(COLLEGE_ABBRS)
+    for college_abbr in COLLEGE_ABBRS:
+        colleges_dict[college_abbr], total_pages = createCollegeDict(college_abbr)
+        print(' college:\t%s\n total pages:\t%d' % (college_abbr, total_pages))
+    make_json(colleges_dict)
+
+if __name__ == '__main__':
+    main()
