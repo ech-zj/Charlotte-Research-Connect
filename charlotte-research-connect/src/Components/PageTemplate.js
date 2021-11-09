@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import CookieConsent from "react-cookie-consent";
 import ParticlesElement from '../Components/Particles';
+import BadgerParticles from './Badger Particles';
 import PersonIcon from '@mui/icons-material/Person';
 import SearchIcon from '@mui/icons-material/Search';
 import '../css/Template.css';
@@ -10,7 +11,9 @@ function PageTemplate(props) {
     const history = useHistory()
     return (
         <div className="App">
-            <ParticlesElement  {...props} />
+            {props.highLight === '3' ?
+                <BadgerParticles {...props} /> :
+                <ParticlesElement  {...props} />}
             <CookieConsent background={'#000'} color={'#fff'}>This site uses cookies</CookieConsent>
             <div className='TopBar'>
                 <div className='AccountNav'>

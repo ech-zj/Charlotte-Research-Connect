@@ -38,7 +38,7 @@ function TopicPage(props) {
         // Call API to get sub topics
         const data = await axios.get(`${settings.DevEnv ? settings.NoSSL : settings.APIBase}/topics/sub/${topic.id}`)
             .catch(er => { return { isErrored: true, er } })
-        if (data.isErrored || !data.data) setTopics({ errored: true })
+        if (data.isErrored || !data.data) return setSubTopics({ errored: true })
 
         // assume that data.data is an array
         setSubTopics(data.data)
@@ -48,7 +48,7 @@ function TopicPage(props) {
         <PageTemplate {...props} highLight='1' />
         <div className='TopicsPage'>
             <div className='TopicsContainer'>
-                <div style={{ display: 'inline-flex', alignItems: 'center', cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null) }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null); setSubTopics([]); }}>
                     {selectedTopic ? <i class="material-icons" style={{ paddingRight: '.5rem' }}>arrow_back</i> : <></>}
                     <h1>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
                 </div>
@@ -60,7 +60,8 @@ function TopicPage(props) {
                     selectedTopic ? <>
                         <h1>You Selected {selectedTopic}</h1>
                         <div className='break' style={{ paddingTop: '3rem' }} />
-                        {subTopicList.map(t => { return renderSubTopic(t) })}
+                        {subTopicList.errored ? <h2>Error Getting Sub Topics</h2> :
+                            subTopicList.map(t => { return renderSubTopic(t) })}
                     </> :
                         topics.map(t => { return renderTopic(t) })
                 }
