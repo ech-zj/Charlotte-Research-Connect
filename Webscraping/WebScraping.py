@@ -36,9 +36,9 @@ def get_elements(soup, pageScrapeConfig):
                     if val.text:
                         vals.append(val.text)
         elif pageScrapeConfig.vals_are_links:
-            for val_link in soup.find_all('a'):
-                if val_link.has_attr('href'):
-                    vals.append(val_link['href'])
+            vals = [a['href'] for a in soup.select('a', href=True)]
+            if len(vals) == 0 and soup.has_attr('href'):
+                vals = soup['href']
         else:
             for val_container in pageScrapeConfig.val_containers:
                 for val in soup.find_all(val_container.tag, class_=val_container.class_):
