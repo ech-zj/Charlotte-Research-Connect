@@ -1,56 +1,296 @@
 {
-    "Ted Amato": [
-        "/faces/ted-amato"
-    ],
-    "Jennifer Ames Stuart": [
-        "/faces/jennifer-ames-stuart"
-    ],
-    "Denis Arnold": [
-        "/faces/denis-arnold"
-    ],
-    "Al Ghosh": [
-        "/faces/al-ghosh"
-    ],
-    "Howard Godfrey": [
-        "/faces/howard-godfrey"
-    ],
-    "Franz Kellermanns": [
-        "/faces/franz-kellermanns"
-    ],
-    "Tao-Hsien Dolly King": [
-        "/faces/tao-hsien-dolly-king"
-    ],
-    "Tom Marshall": [
-        "/faces/tom-marshall"
-    ],
-    "David Mauer": [
-        "/faces/david-mauer"
-    ],
-    "Dr. Sangkil Moon": [
-        "/faces/dr-sangkil-moon"
-    ],
-    "Pat Mynatt": [
-        "/faces/pat-mynatt"
-    ],
-    "Natasha Randle": [
-        "/faces/natasha-randle"
-    ],
-    "Lisa Schulkind": [
-        "/faces/lisa-schulkind"
-    ],
-    "Reginald Silver": [
-        "/faces/reginald-silver"
-    ],
-    "Weidong Tian": [
-        "/faces/weidong-tian"
-    ],
-    "Jennifer Troyer": [
-        "/faces/jennifer-troyer"
-    ],
-    "Justin Webb": [
-        "/faces/justin-webb"
-    ],
-    "Kiplan Womack": [
-        "/faces/kiplan-womack"
-    ]
+    "Belk College of Business": {
+        "faculty-connections-name": "college-of-business",
+        "college-link": "https://belkcollege.uncc.edu/",
+        "faculty-directories": [
+            "https://belkcollege.charlotte.edu/faces/faculty"
+        ],
+        "faculty-links": {
+            "Ted Amato": [
+                "/faces/ted-amato"
+            ],
+            "Jennifer Ames Stuart": [
+                "/faces/jennifer-ames-stuart"
+            ],
+            "Denis Arnold": [
+                "/faces/denis-arnold"
+            ],
+            "Al Ghosh": [
+                "/faces/al-ghosh"
+            ],
+            "Howard Godfrey": [
+                "/faces/howard-godfrey"
+            ],
+            "Franz Kellermanns": [
+                "/faces/franz-kellermanns"
+            ],
+            "Tao-Hsien Dolly King": [
+                "/faces/tao-hsien-dolly-king"
+            ],
+            "Tom Marshall": [
+                "/faces/tom-marshall"
+            ],
+            "David Mauer": [
+                "/faces/david-mauer"
+            ],
+            "Dr. Sangkil Moon": [
+                "/faces/dr-sangkil-moon"
+            ],
+            "Pat Mynatt": [
+                "/faces/pat-mynatt"
+            ],
+            "Natasha Randle": [
+                "/faces/natasha-randle"
+            ],
+            "Lisa Schulkind": [
+                "/faces/lisa-schulkind"
+            ],
+            "Reginald Silver": [
+                "/faces/reginald-silver"
+            ],
+            "Weidong Tian": [
+                "/faces/weidong-tian"
+            ],
+            "Jennifer Troyer": [
+                "/faces/jennifer-troyer"
+            ],
+            "Justin Webb": [
+                "/faces/justin-webb"
+            ],
+            "Kiplan Womack": [
+                "/faces/kiplan-womack"
+            ]
+        }
+    },
+    "College of Arts + Architecture": {
+        "faculty-connections-name": "college-of-arts-and-architecture",
+        "college-link": "https://coaa.uncc.edu/",
+        "faculty-directories": [
+            "https://coaa.charlotte.edu/directory/faculty",
+            "https://coaa.charlotte.edu/directory/part-time-faculty",
+            "https://coaa.charlotte.edu/directory/adjunct-faculty"
+        ],
+        "faculty-links": {
+            "Gretchen Alterowitz": "/people/gretchen-alterowitz",
+            "Aly Amidei": "/people/aly-amidei",
+            "Nadia M. Anderson": "/people/nadia-m-anderson",
+            "Brian Arreola": "/people/brian-arreola",
+            "Bruce Auerbach": "/people/bruce-auerbach",
+            "Mona Azarbayjani": "/people/mona-azarbayjani",
+            "Audrey Babcock": "/people/audrey-babcock",
+            "E.E. Balcos": "/people/ee-balcos",
+            "Jeff Balmer": "/people/jeff-balmer",
+            "Audrey Baran": "/people/audrey-baran",
+            "Malena Bergmann": "/people/malena-bergmann",
+            "Chris Berry": "/people/chris-berry",
+            "David Brodeur": "/people/david-brodeur",
+            "Blaine Brownell": "/people/blaine-brownell",
+            "Chelsea Brtis": "/people/chelsea-brtis",
+            "Tom Burch": "/people/tom-burch",
+            "Jannie Burgess": "/people/jannie-burgess",
+            "Jessica \"JB\" Burke": "/people/jessica-jb-burke",
+            "Alex Cabral": "/people/alex-cabral",
+            "Robert Campbell": "/people/robert-campbell",
+            "Will Campbell": "/people/will-campbell",
+            "Kelly Carlson-Reddig": "/people/kelly-carlson-reddig",
+            "Lynne Conner": "/people/lynne-conner",
+            "Sekou Cooke": "/people/sekou-cooke",
+            "Carlos Cruz": "/people/carlos-cruz",
+            "Jane Dalton": "/people/jane-dalton",
+            "Rachel Dickey": "/people/rachel-dickey",
+            "Ann Dils": "/people/ann-dils",
+            "Rick Dior": "/people/rick-dior",
+            "Sequina DuBose": "/people/sequina-dubose",
+            "Jason Dungee": "/people/jason-dungee",
+            "Kaja Dunn": "/people/kaja-dunn",
+            "Jefferson Ellinger": "/people/jefferson-ellinger",
+            "Jonah Elrod": "/people/jonah-elrod",
+            "Jae Emerling": "/people/jae-emerling",
+            "Rachel Engstrom": "/people/rachel-engstrom",
+            "David Fillmore": "/people/david-fillmore",
+            "Daniel Fischer": "/people/daniel-fischer",
+            "Thomas Forget": "/people/thomas-forget",
+            "Matthew Fraiser": "/people/matthew-fraiser",
+            "Jim Frakes": "/people/jim-frakes",
+            "Cynthia Frank": "/people/cynthia-frank",
+            "Jamie Franki": "/people/jamie-franki",
+            "Heather Freeman": "/people/heather-freeman",
+            "Mira Frisch": "/people/mira-frisch",
+            "David Gall": "/people/david-gall",
+            " Jos\u00e9 G\u00e1mez": "/people/jos%C3%A9-g%C3%A1mez",
+            "Maja Godlewska": "/people/maja-godlewska",
+            "Lee Gray": "/people/lee-gray",
+            "James A.  Grymes": "/people/james-grymes",
+            "Andrew Hartley": "/people/andrew-hartley",
+            "Aspen Hochhalter": "/people/aspen-hochhalter",
+            "Lisa Homann": "/people/lisa-homann",
+            "Karen Hubbard": "/people/karen-hubbard",
+            "Hali Hutchison": "/people/hali-hutchison",
+            "Ok-Kyun Im": "/people/ok-kyun-im",
+            "Chris Jarrett": "/people/chris-jarrett",
+            "Kim Jones": "/people/kim-jones",
+            "Anna Kenar": "/people/anna-kenar",
+            "Kyoung Hee Kim": "/people/kyoung-hee-kim",
+            "Lidia Klein": "/people/lidia-klein",
+            "Kelsey Klotz": "/people/kelsey-klotz",
+            "Ann Kluttz": "/people/ann-kluttz",
+            "Gustavo Leclerc": "/people/gustavo-leclerc",
+            "Ming-Chun Lee": "/people/ming-chun-lee",
+            "Andrew Leventis": "/people/andrew-leventis",
+            "Jessica Lindsey": "/people/jessica-lindsey",
+            "Emily Gunzburger Maka\u0161": "/people/emily-gunzburger-maka%C5%A1",
+            "Marc Manack": "/people/marc-manack",
+            "Jeremy Marks": "/people/jeremy-marks",
+            "Liz McCormick": "/people/liz-mccormick",
+            "Eric Millard": "/people/eric-millard",
+            "Rick Moll": "/people/rick-moll",
+            "Jay Morong": "/people/jay-morong",
+            "Jeff Murphy": "/people/jeff-murphy",
+            "Beth Murray": "/people/beth-murray",
+            "Delia Neil": "/people/delia-neil",
+            "Marissa Nesbit": "/people/marissa-nesbit",
+            "Bonnie Noble": "/people/bonnie-noble",
+            "Gordon W. Olson": "/people/gordon-w-olson",
+            "Evelyn K. Orman": "/people/evelyn-k-orman",
+            "Dimitris Papanikolaou": "/people/dimitris-papanikolaou",
+            "Brett Penshorn": "/people/brett-penshorn",
+            "Mark Pizzato": "/people/mark-pizzato",
+            "Angela Rajagopalan": "/people/angela-rajagopalan",
+            "Marek Ranis": "/people/marek-ranis",
+            "Kristin Rothrock": "/people/kristin-rothrock",
+            "David  Russell": "/people/david-russell",
+            "Deborah Ryan": "/people/deborah-ryan",
+            "Kaustavi Sarkar": "/people/kaustavi-sarkar",
+            "Eric Sauda": "/people/eric-sauda",
+            "Dylan Savage": "/people/dylan-savage",
+            "Thomas Schmidt": "/people/thomas-schmidt",
+            "Shamou": "/people/shamou",
+            "Christina Singer": "/people/christina-singer-0",
+            "Joseph Skillen": "/people/joseph-skillen",
+            "Greg Snyder": "/people/greg-snyder",
+            "Fred  Spano": "/people/fred-spano",
+            "Laura Standley": "/people/laura-standley",
+            "Benjamin G. Stickels": "/people/benjamin-g-stickels",
+            "Elizabeth Sullivan": "/people/elizabeth-sullivan",
+            "David Thaddeus": "/people/david-thaddeus",
+            "Lydia Thompson": "/people/lydia-thompson",
+            "Deborah Wall": "/people/deborah-wall",
+            "Laura Waringer": "/people/laura-waringer",
+            "Erik Waterkotte": "/people/erik-waterkotte",
+            "Rachel Watkins": "/people/rachel-watkins",
+            "Betsy West": "/people/betsy-west",
+            "Jennifer  Whitaker": "/people/jennifer-whitaker",
+            "Tamara Williams": "/people/tamara-williams",
+            "Robin Witt": "/people/robin-witt",
+            "Peter Wong": "/people/peter-wong",
+            "Chengde Wu": "/people/chengde-wu",
+            "Elizabeth Yoder": "/people/elizabeth-yoder",
+            "Jacqueline  Yost": "/people/jacqueline-yost",
+            "ChengOu Yu": "/people/chengou-yu",
+            "Catty Zhang": "/people/catty-zhang",
+            "Kazuko Adachi": "/people/kazuko-adachi",
+            "Carol Bacon": "/people/carol-bacon",
+            "Jill Bloede": "/people/jill-bloede",
+            "Marla Brown": "/people/marla-brown",
+            "Josie Holden Bulla": "/people/josie-holden-bulla",
+            "Marilyn Carter": "/people/marilyn-carter",
+            "Michael Clapp": "/people/michael-clapp",
+            "Fernando Claudio Rodriguez": "/people/fernando-claudio-rodriguez",
+            "Jaquasha Col\u00f3n": "/people/jaquasha-col%C3%B3n",
+            "Dean Crouch": "/people/dean-crouch",
+            "Steven Danilowicz": "/people/steven-danilowicz",
+            "Shelley Sloan Ellis": "/people/shelley-sloan-ellis",
+            "Ben Futrell": "/people/ben-futrell",
+            "John Hairston": "/people/john-hairston",
+            "David Harrison": "/people/david-harrison",
+            "Kevin Helms": "/people/kevin-helms",
+            "Trevor Hess": "/people/trevor-hess",
+            "Trevor Holmes": "/people/trevor-holmes",
+            "Frances Hsu": "/people/frances-hsu",
+            "Rick Kazebee": "/people/rick-kazebee",
+            "Joel Kerner": "/people/joel-kerner",
+            "May Khalife": "/people/may-khalife",
+            "Tod A. Kubo": "/people/tod-kubo",
+            "Will Philemon": "/people/will-philemon",
+            "Melanie Reddrick": "/people/melanie-reddrick",
+            "Liz Richardson": "/people/liz-richardson",
+            "Freddie Rivera": "/people/freddie-rivera",
+            "Le Roy Barley": "/people/le-roy-barley",
+            "Lovell Bradford": "/people/lovell-bradford",
+            "Troy Conn": "/people/troy-conn",
+            "Melissa Coyle": "/people/melissa-coyle",
+            "Jennifer  Dior": "/people/jennifer-dior",
+            "Michael Figgers": "/people/michael-figgers",
+            "Noel  Freidline": "/people/noel-freidline",
+            "Albert (AJ) Glasco": "/people/albert-aj-glasco",
+            "Joshua Hood": "/people/joshua-hood",
+            "Rodrigo Jimenez": "/people/rodrigo-jimenez",
+            "Byron Johns": "/people/byron-johns",
+            "Rob Linton": "/people/rob-linton",
+            " Arturo Lujan": "/people/arturo-lujan",
+            "Ian McCollum": "/people/ian-mccollum",
+            "Jason McNeel": "/people/jason-mcneel",
+            "Eric Mullis": "/people/eric-mullis",
+            "Nick  Nichols": "/people/nick-nichols",
+            "Anne Pengilly": "/people/anne-pengilly",
+            "Christina Pier": "/people/christina-pier",
+            "Evan Ringel": "/people/evan-ringel",
+            "Janet Schroeder": "/people/janet-schroeder",
+            "Alisha Springer": "/people/alisha-springer",
+            "Ben Still": "/people/ben-still",
+            "Kirsten Swanson": "/people/kirsten-swanson",
+            "Charles  Vaughn": "/people/charles-vaughn",
+            "David Walters": "/people/david-walters",
+            "Wally West": "/people/wally-west",
+            "Ginger Wyrick": "/people/ginger-wyrick",
+            "Alan Yamamoto": "/people/alan-yamamoto"
+        }
+    },
+    "College of Computing and Informatics": {
+        "faculty-connections-name": "cci",
+        "college-link": "https://cci.uncc.edu/",
+        "faculty-directories": [
+            "https://cci.charlotte.edu/directory/faculty"
+        ],
+        "faculty-links": {}
+    },
+    "Cato College of Education": {
+        "faculty-connections-name": "coed",
+        "college-link": "https://education.uncc.edu/",
+        "faculty-directories": [
+            "https://education.charlotte.edu/directory/5",
+            "https://education.charlotte.edu/directory/21",
+            "https://education.charlotte.edu/directory/23",
+            "https://education.charlotte.edu/directory/middle-secondary",
+            "https://education.charlotte.edu/directory/27",
+            "https://education.charlotte.edu/directory/special-education",
+            "https://education.charlotte.edu/directory/33",
+            "https://education.charlotte.edu/directory/7"
+        ],
+        "faculty-links": {}
+    },
+    "College of Health and Human Services": {
+        "faculty-connections-name": "chhs",
+        "college-link": "https://health.uncc.edu/",
+        "faculty-directories": [
+            "https://publichealth.charlotte.edu/directory/faculty"
+        ],
+        "faculty-links": {}
+    },
+    "College of Liberal Arts and Sciences": {
+        "faculty-connections-name": "clas",
+        "college-link": "https://clas.uncc.edu/",
+        "faculty-directories": [
+            "https://clas.charlotte.edu/directory-list/staff"
+        ],
+        "faculty-links": {}
+    },
+    "William States Lee College of Engineering": {
+        "faculty-connections-name": "college-of-engineering",
+        "college-link": "https://engr.uncc.edu/",
+        "faculty-directories": [
+            "https://coefs.uncc.edu/"
+        ],
+        "faculty-links": {}
+    }
 }

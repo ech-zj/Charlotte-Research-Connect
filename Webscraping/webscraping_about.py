@@ -1,16 +1,32 @@
 ﻿import WebScraping as ws
 
 college_links = {
-    'Belk College of Business': ('college-of-business', 'https://belkcollege.uncc.edu/', ['https://belkcollege.charlotte.edu/faces/faculty']),
-    'College of Arts + Architecture': ('college-of-arts-and-architecture', 'https://coaa.uncc.edu/', [
-        'https://coaa.charlotte.edu/directory/faculty',
-        'https://coaa.charlotte.edu/directory/part-time-faculty',
-        'https://coaa.charlotte.edu/directory/adjunct-faculty'
-        ]),
-    'College of Computing and Informatics': ('cci', 'https://cci.uncc.edu/', ['https://cci.charlotte.edu/directory/faculty']),
-    'Cato College of Education': ('coed',
-        'https://education.uncc.edu/', 
-        [
+    'Belk College of Business': {
+        'faculty-connections-name': 'college-of-business', 
+        'college-link': 'https://belkcollege.uncc.edu/', 
+        'faculty-directories': ['https://belkcollege.charlotte.edu/faces/faculty'],
+        'faculty-links': dict()
+        },
+    'College of Arts + Architecture': {
+        'faculty-connections-name': 'college-of-arts-and-architecture', 
+        'college-link': 'https://coaa.uncc.edu/', 
+        'faculty-directories': [
+            'https://coaa.charlotte.edu/directory/faculty',
+            'https://coaa.charlotte.edu/directory/part-time-faculty',
+            'https://coaa.charlotte.edu/directory/adjunct-faculty'
+            ],
+        'faculty-links': dict()
+        },
+    'College of Computing and Informatics': {
+        'faculty-connections-name': 'cci', 
+        'college-link': 'https://cci.uncc.edu/', 
+        'faculty-directories': ['https://cci.charlotte.edu/directory/faculty'],
+        'faculty-links': dict()
+        },
+    'Cato College of Education': {
+        'faculty-connections-name': 'coed',
+        'college-link': 'https://education.uncc.edu/', 
+        'faculty-directories': [
             'https://education.charlotte.edu/directory/5', 
             'https://education.charlotte.edu/directory/21', 
             'https://education.charlotte.edu/directory/23', 
@@ -19,10 +35,27 @@ college_links = {
             'https://education.charlotte.edu/directory/special-education',
             'https://education.charlotte.edu/directory/33',
             'https://education.charlotte.edu/directory/7'
-        ]),
-    'College of Health and Human Services': ('chhs', 'https://health.uncc.edu/', ['https://publichealth.charlotte.edu/directory/faculty']),
-    'College of Liberal Arts and Sciences': ('clas', 'https://clas.uncc.edu/', ['https://clas.charlotte.edu/directory-list/staff']),
-    'William States Lee College of Engineering': ('college-of-engineering', 'https://engr.uncc.edu/', ['https://coefs.uncc.edu/']),
+            ],
+        'faculty-links': dict()
+        },
+    'College of Health and Human Services': {
+        'faculty-connections-name': 'chhs', 
+        'college-link': 'https://health.uncc.edu/', 
+        'faculty-directories': ['https://publichealth.charlotte.edu/directory/faculty'],
+        'faculty-links': dict()
+        },
+    'College of Liberal Arts and Sciences': {
+        'faculty-connections-name': 'clas', 
+        'college-link': 'https://clas.uncc.edu/', 
+        'faculty-directories': ['https://clas.charlotte.edu/directory-list/staff'],
+        'faculty-links': dict()
+        },
+    'William States Lee College of Engineering': {
+        'faculty-connections-name': 'college-of-engineering', 
+        'college-link': 'https://engr.uncc.edu/', 
+        'faculty-directories': ['https://coefs.uncc.edu/'],
+        'faculty-links': dict()
+        },
     }
 
 name = {'tag':'h4', 'class_':''}
@@ -48,23 +81,26 @@ def getCollegeFacultyLinks(link, college_params):
     outputDict = ws.get_page_dict_outer(soup, containerParams)
     return outputDict
 
+def add_college_links(college_name, params):
+    for link in college_links[college_name]['faculty-directories']:
+        college_dict = getCollegeFacultyLinks(link, params)
+        college_links[college_name]['faculty-links'].update(college_dict)
+
 def main():
     global name
     global faculty_link
     global outer_container
     
     belk_params = reset_params()
-    for link in college_links['Belk College of Business'][2]:
-        belk_faculty_dict = getCollegeFacultyLinks(link, belk_params)
+    add_college_links('Belk College of Business', belk_params)
+    
     name = {'tag': 'h2', 'class_': 'heading-regular heading-med'}
     faculty_link = {'tag': 'a', 'class_': 'thumbnail-link'}
     outer_container = {'tag':'a', 'class_':'thumbnail-link'}
     coaa_params = reset_params()
-    for link in college_links['College of Arts + Architecture'][2]:
-        print(link)
-        coaa_faculty_dict = getCollegeFacultyLinks(link, coaa_params)
-        print(coaa_faculty_dict)
-    #ws.make_json('faculty', faculty_dict)
+    add_college_links('College of Arts + Architecture', coaa_params)
+
+    ws.make_json('faculty', college_links)
 
 if __name__ == '__main__':
     main()
