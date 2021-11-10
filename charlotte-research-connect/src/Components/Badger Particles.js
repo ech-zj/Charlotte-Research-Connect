@@ -157,7 +157,7 @@ export default () => {
                                 "type": "images",
                                 "options": {
                                     "images": {
-                                        "src": "https://lh3.googleusercontent.com/proxy/rU5u7IDlDNskv5Tk5wF5SPzkXlqxosBcDIbafslQA6dMyzGIiuG0fYfEnkWoTu3sITDy82oV8HwzJOF9rZ3ufLqR6mP59khVSC5jtmjS8z_sJXHZkQAG"
+                                        "src": "https://res.cloudinary.com/thomasc-tech/image/upload/v1636492248/badger_s7xnur.png"
                                     }
                                 }
                             },

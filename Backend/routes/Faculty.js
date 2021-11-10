@@ -1,6 +1,6 @@
 const express = require('express')
 const Router = express.Router()
-const tokenParsing = require('../lib/tokenParsing')
+
 
 // Temporarily hard coded, will move to DB soon
 const Faculty = [
