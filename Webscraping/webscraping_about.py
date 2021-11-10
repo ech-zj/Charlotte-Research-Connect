@@ -81,10 +81,12 @@ def getCollegeFacultyLinks(link, college_params):
     outputDict = ws.get_page_dict_outer(soup, containerParams)
     return outputDict
 
-def add_college_links(college_name, params):
+def add_college_links(college_name, params, log=False):
     for link in college_links[college_name]['faculty-directories']:
         college_dict = getCollegeFacultyLinks(link, params)
         college_links[college_name]['faculty-links'].update(college_dict)
+        if log:
+            print(college_dict)
 
 def main():
     global name
@@ -99,6 +101,12 @@ def main():
     outer_container = {'tag':'a', 'class_':'thumbnail-link'}
     coaa_params = reset_params()
     add_college_links('College of Arts + Architecture', coaa_params)
+
+    outer_container = {'tag': 'div', 'class_': 'views-row'}
+    name = {'tag': 'h3', 'class_': ''}
+    faculty_link = {'tag': 'a', 'class_': 'button button-gray'}
+    cci_params = reset_params()
+    add_college_links('College of Computing and Informatics', cci_params, log=True)
 
     ws.make_json('faculty', college_links)
 

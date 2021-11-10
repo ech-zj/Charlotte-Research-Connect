@@ -36,7 +36,7 @@ def get_elements(soup, pageScrapeConfig):
                     if val.text:
                         vals.append(val.text)
         elif pageScrapeConfig.vals_are_links:
-            vals = [a['href'] for a in soup.select('a', href=True)]
+            vals = [a['href'] for a in soup.select('a', href=True) if not a.startswith('mailto')]
             if len(vals) == 0 and soup.has_attr('href'):
                 vals = soup['href']
         else:

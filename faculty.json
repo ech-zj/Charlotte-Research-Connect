@@ -252,7 +252,47 @@
         "faculty-directories": [
             "https://cci.charlotte.edu/directory/faculty"
         ],
-        "faculty-links": {}
+        "faculty-links": {
+            "Fatma Mili": [
+                "mailto:fmili@uncc.edu",
+                "/directory/fatma-mili"
+            ],
+            "Bojan Cukic": [
+                "mailto:bcukic@uncc.edu",
+                "/directory/bojan-cukic"
+            ],
+            "Heather Lipford": [
+                "mailto:richter@uncc.edu",
+                "http://webpages.uncc.edu/richter/"
+            ],
+            "William J. Tolone": [
+                "mailto:wjtolone@uncc.edu",
+                "/directory/william-j-tolone"
+            ],
+            "Dewan Ahmed": [
+                "mailto:dahmed@uncc.edu",
+                "/directory/dewan-ahmed"
+            ],
+            "Srinivas Akella": [
+                "mailto:sakella@uncc.edu",
+                "/directory/srinivas-akella"
+            ],
+            "Ann Aksut": [
+                "mailto:aaksut@uncc.edu",
+                "/directory/ann-aksut"
+            ],
+            "Michael C. Allen": [
+                "http://webpages.uncc.edu/cma/"
+            ],
+            "Jermaine Alston": [
+                "mailto:Jermaine.Alston@uncc.edu",
+                "/directory/jermaine-alston"
+            ],
+            "Joel Amick": [
+                "mailto:jpamick@uncc.edu",
+                "/directory/joel-amick"
+            ]
+        }
     },
     "Cato College of Education": {
         "faculty-connections-name": "coed",
