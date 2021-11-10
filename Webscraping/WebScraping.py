@@ -1,5 +1,5 @@
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import requests
 import json
 
@@ -15,27 +15,34 @@ class PageScrapeConfig:
         ''' 
         :param str key_container: key html 'tag' type and 'class_' 
         :param dict val_containers: list of dicts with 'tag' and 'class_' converted to ContainerDict object
-        :param bool vals_are_sublinks: true if vals are hyperlinks within container
+        :param bool vals_are_link_text: true if vals are hyperlink text within container
+        :param bool vals_are_links: true if getting the link itself
         :param bool outer_container: if there is an outer container for keys and vals this is that container's html 'tag' type and 'class_'
         '''
         self.key_container = ContainerDict(containerParams['key_container'])
         self.val_containers = [ContainerDict(val_params) for val_params in containerParams['val_containers']]
-        self.vals_are_sublinks = False if not 'vals_are_sublinks' in containerParams else containerParams['vals_are_sublinks']
+        self.vals_are_link_text = False if not 'vals_are_link_text' in containerParams else containerParams['vals_are_link_text']
+        self.vals_are_links = False if not 'vals_are_links' in containerParams else containerParams['vals_are_links']
         self.outer_container = False if not 'outer_container' in containerParams else ContainerDict(containerParams['outer_container'])
 
 def get_elements(soup, pageScrapeConfig):
     try:
         key = soup.find(pageScrapeConfig.key_container.tag, class_ = pageScrapeConfig.key_container.class_).text
         vals = []
-        if pageScrapeConfig.vals_are_sublinks:
+        if pageScrapeConfig.vals_are_link_text:
             for val_container in pageScrapeConfig.val_containers:
                 val_soup = soup.find(val_container.tag, class_=val_container.class_)
                 for val in val_soup.find_all('a'):
                     if val.text:
                         vals.append(val.text)
+        elif pageScrapeConfig.vals_are_links:
+            for val_link in soup.find_all('a'):
+                if val_link.has_attr('href'):
+                    vals.append(val_link['href'])
         else:
-            for val_container in val_containers_and_types:
+            for val_container in pageScrapeConfig.val_containers:
                 for val in soup.find_all(val_container.tag, class_=val_container.class_):
+                    print(val)
                     if val.text:
                         vals.append(val.text)
         return key, vals
@@ -74,7 +81,7 @@ def get_faculty_names_dict(link):
     params = {
         'key_container': name,
         'val_containers': [group, interests],
-        'vals_are_sublinks': True,
+        'vals_are_link_text': True,
         'outer_container': outer_container
         }
     containerParams = PageScrapeConfig(params)

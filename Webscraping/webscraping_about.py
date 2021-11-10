@@ -26,24 +26,26 @@ college_links = {
     'William States Lee College of Engineering': ('https://engr.uncc.edu/', ['https://coefs.uncc.edu/']),
     }
 
-def getCollegeLinks(link):
-    college = {'tag':'h2', 'class_':''}
-    college_link = {'tag':'div', 'class_':'views-row views-row-1 views-row-odd views-row-first'}
-    outer_container = {'tag':'div', 'class_':'on-campus-numbers-category College and Academic Departments'}
-    params = {
-        'key_container': college,
-        'val_containers': [college_link],
-        'vals_are_sublinks': True,
-        'outer_container': outer_container
-        }
+name = {'tag':'h4', 'class_':''}
+faculty_link = {'tag':'a', 'class_':''}
+outer_container = {'tag':'div', 'class_':'thumbnail-title'}
+params = {
+    'key_container': name,
+    'val_containers': [faculty_link],
+    'vals_are_link_text': False,
+    'vals_are_links': True,
+    'outer_container': outer_container
+    }
+
+def getBelkFacultyLinks(link):
     containerParams = ws.PageScrapeConfig(params)
     soup = ws.get_soup(link)
     outputDict = ws.get_page_dict_outer(soup, containerParams)
     return outputDict
 
 def main():
-    colleges_dict = getCollegeLinks('https://directory.charlotte.edu/')
-    ws.make_json('colleges', colleges_dict)
+    faculty_dict = getBelkFacultyLinks('https://belkcollege.charlotte.edu/faces/faculty')
+    ws.make_json('faculty', faculty_dict)
 
 if __name__ == '__main__':
     main()
