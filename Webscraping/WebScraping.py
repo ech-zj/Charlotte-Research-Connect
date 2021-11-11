@@ -25,9 +25,19 @@ class PageScrapeConfig:
         self.vals_are_links = False if not 'vals_are_links' in containerParams else containerParams['vals_are_links']
         self.outer_container = False if not 'outer_container' in containerParams else ContainerDict(containerParams['outer_container'])
 
+def get_key(soup, tag, class_):
+    key = soup.find(tag, class_)
+    if key:
+        return key.text
+    elif soup and soup.text:
+        return soup.text
+    else:
+        print('no key found')
+        return None
+
 def get_elements(soup, pageScrapeConfig):
     try:
-        key = soup.find(pageScrapeConfig.key_container.tag, class_ = pageScrapeConfig.key_container.class_).text
+        key = get_key(soup, pageScrapeConfig.key_container.tag, class_ = pageScrapeConfig.key_container.class_)
         vals = []
         if pageScrapeConfig.vals_are_link_text:
             for val_container in pageScrapeConfig.val_containers:
@@ -36,7 +46,7 @@ def get_elements(soup, pageScrapeConfig):
                     if val.text:
                         vals.append(val.text)
         elif pageScrapeConfig.vals_are_links:
-            vals = [a['href'] for a in soup.select('a', href=True) if not a.startswith('mailto')]
+            vals = [a['href'] for a in soup.select('a', href=True) if not a['href'].startswith('mailto')]
             if len(vals) == 0 and soup.has_attr('href'):
                 vals = soup['href']
         else:
@@ -47,7 +57,7 @@ def get_elements(soup, pageScrapeConfig):
                         vals.append(val.text)
         return key, vals
     except Exception as e:
-        print('nah')
+        print('get_elements exception')
         print(e)
         return False, False
 

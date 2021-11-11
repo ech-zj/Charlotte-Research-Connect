@@ -83,7 +83,14 @@ def getCollegeFacultyLinks(link, college_params):
 
 def add_college_links(college_name, params, log=False):
     for link in college_links[college_name]['faculty-directories']:
+        print(link)
         college_dict = getCollegeFacultyLinks(link, params)
+        for key, val in college_dict.items():
+            if type(val)==type(list()):
+                college_dict[key] = val[0]
+                val = val[0]
+            if val and val.startswith('/'):
+                college_dict[key] = link+val
         college_links[college_name]['faculty-links'].update(college_dict)
         if log:
             print(college_dict)
@@ -106,7 +113,31 @@ def main():
     name = {'tag': 'h3', 'class_': ''}
     faculty_link = {'tag': 'a', 'class_': 'button button-gray'}
     cci_params = reset_params()
-    add_college_links('College of Computing and Informatics', cci_params, log=True)
+    add_college_links('College of Computing and Informatics', cci_params)
+    
+    outer_container = {'tag': 'td', 'class_': 'views-field views-field-field-directory-read-more-link'}
+    name = {'tag': 'a', 'class_': ''}
+    faculty_link = {'tag': 'a', 'class_': ''}
+    coed_params = reset_params()
+    add_college_links('Cato College of Education', coed_params)
+
+    outer_container = {'tag': 'div', 'class_': 'caption'}
+    name = {'tag': 'h2', 'class_': 'heading-regular heading-med'}
+    faculty_link = {'tag': 'a', 'class_': 'button button-green'}
+    chhs_params = reset_params()
+    add_college_links('College of Health and Human Services', chhs_params)
+
+    outer_container = {'tag': 'div', 'class_': 'views-field views-field-nothing'}
+    name = {'tag': 'h3', 'class_': ''}
+    faculty_link = {'tag': 'a', 'class_': 'button button-gray'}
+    clas_params = reset_params()
+    add_college_links('College of Liberal Arts and Sciences', clas_params)
+
+    outer_container = {'tag': 'li', 'class_': ''}
+    name = {'tag': 'em', 'class_': ''}
+    faculty_link = {'tag': 'a', 'class_': ''}
+    coe_params = reset_params()
+    add_college_links('William States Lee College of Engineering', coe_params, log=True)
 
     ws.make_json('faculty', college_links)
 
