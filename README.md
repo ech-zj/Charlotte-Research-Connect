@@ -10,17 +10,14 @@
 
 ## Sprint 2
 
-[Google Slides](https://docs.google.com/presentation/d/1dM4TmmoMYUajvxeP7uF0EYmC2retwHHg38xt4bPv8aU/edit#slide=id.gfcd2b68f6f_0_60)
-
-[Live Demo Code](https://github.com/JokkerBang/Charlotte-Research-Connect)
-
-[Working Hosted Site](https://charlotte-research-connect.web.app/)
+* [Google Slides](https://docs.google.com/presentation/d/1dM4TmmoMYUajvxeP7uF0EYmC2retwHHg38xt4bPv8aU/edit#slide=id.gfcd2b68f6f_0_60)
+* [Live Demo Code](https://github.com/JokkerBang/Charlotte-Research-Connect)
+* [Working Hosted Site](https://charlotte-research-connect.web.app/)
 
 ## Sprint 3
 
-[Backlog](https://docs.google.com/document/d/13W5ec0oqaOgUdsd316qTUtD8_f5BoeLfLpBFMo5Nu1w/edit)
-
-[Design Documentation](https://docs.google.com/document/d/1raWjttSwjOWhpbzYa_j4530Xr4ih_4IwqdBWXcbtvQo/edit)
+* [Backlog](https://docs.google.com/document/d/13W5ec0oqaOgUdsd316qTUtD8_f5BoeLfLpBFMo5Nu1w/edit)
+* [Design Documentation](https://docs.google.com/document/d/1raWjttSwjOWhpbzYa_j4530Xr4ih_4IwqdBWXcbtvQo/edit)
 
 # Installation Requirements
 
