@@ -42,6 +42,8 @@ Execute `npm i` in cmd/bash
 
 Execute `nodemon .` in cmd/bash to start development server
 
+* if nodemon not installed `npm install -g nodemon`
+
 
 ## Database
 TBD
