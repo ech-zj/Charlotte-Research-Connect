@@ -1,4 +1,4 @@
-### Latest Web Scraping Results 2021-11-08
+### Faculty Connect Topic Results
 
 |college_abbr|total_pages|
 | ----------- | ----------- |
@@ -11,4 +11,9 @@
 |college-of-engineering|17|
 |school-of-data-science-sds|5|
 
-### See webscraping_about.py to see all the links that were used to gather faculty about pages.
+### Faculty About Results
+
+* webscraping_about.py 
+  * to see all the links that were used to gather faculty about pages.
+* faculty.json
+  * final results of webscraping_about.py
