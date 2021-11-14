@@ -21,7 +21,7 @@
 
 # Installation Requirements
 
-Node.js (Created on v16)
+Node.js (Created on [v16](https://nodejs.org/en/))
 
 # Setup
 
@@ -41,6 +41,8 @@ Navigate to `/Backend`
 Execute `npm i` in cmd/bash
 
 Execute `nodemon .` in cmd/bash to start development server
+
+* if [nodemon](https://www.npmjs.com/package/nodemon) not installed `npm install -g nodemon`
 
 
 ## Database
