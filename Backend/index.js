@@ -19,7 +19,6 @@ const pool = mysql.createPool({
 
 pool.on('connection', () => {
     console.log(`DB Conneciton Made`)
-    
 });
 
 pool.query('SELECT 1+1 as solution', (err, res) => {
