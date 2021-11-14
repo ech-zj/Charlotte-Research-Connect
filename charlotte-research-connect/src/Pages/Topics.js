@@ -49,7 +49,7 @@ function TopicPage(props) {
         <div className='TopicsPage'>
             <div className='TopicsContainer'>
                 <div style={{ display: 'inline-flex', alignItems: 'center', cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null); setSubTopics([]); }}>
-                    {selectedTopic ? <i class="material-icons" style={{ paddingRight: '.5rem' }}>arrow_back</i> : <></>}
+                    {selectedTopic ? <i className="material-icons" style={{ paddingRight: '.5rem' }}>arrow_back</i> : <></>}
                     <h1>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
                 </div>
                 <div className='break' />

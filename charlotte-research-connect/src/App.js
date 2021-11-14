@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Pages Imports
 import HomePage from './Pages/Home';
-import TopicsPage from './Pages/Topics'
+import TopicsPage from './Pages/Topics';
 import FacultyPage from './Pages/Faculty';
 import AboutPage from './Pages/About';
 
