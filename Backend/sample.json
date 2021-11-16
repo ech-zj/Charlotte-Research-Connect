@@ -1,0 +1,395 @@
+{
+  "college-of-business": {
+    "Marketing": [
+      "Global marketing",
+      "multinational entrepreneurship",
+      "Multinational management strategy",
+      "culture",
+      "culture and consumers",
+      "customer relationship management",
+      "marketing analytics",
+      "movie marketing",
+      "social media",
+      "text mining"
+    ],
+    "Business Info Systems": [
+      "computer communication",
+      "computer networking",
+      "information management",
+      "network application programming design",
+      "network management",
+      "network system performance evaluation",
+      "web application programming design",
+      "OM-marketing interface",
+      "operations management",
+      "supply chain coordination",
+      "supply chain management"
+    ],
+    "Accountancy": [
+      "individual taxation",
+      "international taxation",
+      "partnership taxation",
+      "Tax policy"
+    ],
+    "Finance": [
+      "applied probability",
+      "corporate finance",
+      "derivatives",
+      "derivatives markets",
+      "financial risk management",
+      "mathematical finance",
+      "random processes",
+      "securities markets",
+      "stochastic control",
+      "stochastic modeling"
+    ],
+    "Economics": [
+      "Economic impact analysis",
+      "Regional economics",
+      "Sports economics"
+    ],
+    "Management": [
+      "business communication technologies",
+      "business presentations",
+      "business writing",
+      "corporate communication",
+      "corporate communication strategy",
+      "leadership development",
+      "management development",
+      "negotiation"
+    ]
+  },
+  "college-of-arts-and-architecture": {
+    "Art & Art History": [
+      "art",
+      "design",
+      "graphic design",
+      "illustration",
+      "printmaking",
+      "visual arts"
+    ],
+    "Music": [
+      "arts and community",
+      "cello",
+      "cultural diversity",
+      "diversity",
+      "music",
+      "orchestra",
+      "string chamber music"
+    ],
+    "Architecture": [
+      "architectural design",
+      "community development",
+      "creative leadership",
+      "cultural representation",
+      "design process",
+      "environmental design",
+      "fine arts",
+      "housing",
+      "social histories",
+      "social sustainability",
+      "sustainability",
+      "urban and regional planning",
+      "Architecture",
+      "computational design",
+      "digital arts",
+      "digital technologies",
+      "interactive architecture",
+      "technology and architecture",
+      "technology integration",
+      "urban design",
+      "urbanism",
+      "community and regional planning",
+      "ecological design",
+      "ecology",
+      "environmental sustainability",
+      "forestry",
+      "hydrology",
+      "landscape ecology",
+      "nature",
+      "sustainable design",
+      "urban hydrology",
+      "water",
+      "water quality",
+      "water resources",
+      "water resources planning"
+    ],
+    "Performing Arts Services": [
+      "film",
+      "musical theatre",
+      "performing arts",
+      "stage",
+      "stage management",
+      "stage production"
+    ],
+    "Theatre": [
+      "clothing history",
+      "costume crafts",
+      "costume design",
+      "costuming",
+      "diversity and theatre",
+      "diversity issues",
+      "dramaturgy",
+      "playwright",
+      "production",
+      "representation",
+      "representation in theatre",
+      "stage makeup",
+      "theatre"
+    ],
+    "Dance": [
+      "ballet",
+      "body and embodiment",
+      "choreography",
+      "collaboration",
+      "collaborative practices",
+      "contemporary ballet",
+      "dance history",
+      "dance pedagogy",
+      "dance technique",
+      "gender",
+      "interdisciplinary collaboration",
+      "practice as research",
+      "queer studies",
+      "sexuality"
+    ]
+  },
+  "cci": {
+    "Software & Information Systems": [
+      "analytics",
+      "complex systems",
+      "data mining",
+      "data science",
+      "education",
+      "health",
+      "health informatics",
+      "machine learning",
+      "outreach",
+      "SOPHI",
+      "agent-based integration",
+      "agent-based modeling and simulation",
+      "collaborative systems",
+      "critical infrastructure protection",
+      "information environments",
+      "meta-level architectures",
+      "secure collaboration architectures"
+    ],
+    "Computer Science": [
+      "automotive robotics",
+      "packaging applications",
+      "robotics"
+    ],
+    "Bioinformatics": [
+      "biomedical informatics",
+      "biochemical analyses",
+      "complex diseases",
+      "computational method development and implementation",
+      "high throughput genomic data analysis",
+      "personal genome computing",
+      "personalized medicine",
+      "systems biology",
+      "gene sequencing",
+      "plant pathologies",
+      "computational biology",
+      "plant pathology",
+      "genomics",
+      "pathogen genetics",
+      "software",
+      "transcriptomics",
+      "visualization"
+    ]
+  },
+  "coed": {
+    "Special Ed & Child Dev": [
+      "access to the general curriculum",
+      "alternate assessment",
+      "applied behavior analysis",
+      "students with cognitive disabilities",
+      "students with disabilities"
+    ],
+    "Education": [
+      "faculty motivation",
+      "leadership application",
+      "leadership theory",
+      "research methodology",
+      "Student Motivation",
+      "teacher education",
+      "teacher evaluation"
+    ]
+  },
+  "chhs": {
+    "Public Health Sciences": [
+      "epidemiology of asthma",
+      "occupational epidemiology"
+    ],
+    "Kinesiology": [
+      "myogenesis"
+    ],
+    "School of Social Work": [
+      "child abuse and neglect",
+      "domestic violence",
+      "emergency crisis response",
+      "homelessness",
+      "parent education",
+      "program development"
+    ],
+    "School of Nursing": [
+      "African Americans",
+      "cardiovascular disease",
+      "Cardiovascular risk factors",
+      "Medication adherence"
+    ],
+    "Health & Human Services": [
+      "community health",
+      "health disparities",
+      "health promotion",
+      "public health",
+      "social inequalities",
+      "vulnerable populations"
+    ]
+  },
+  "clas": {
+    "Communication Studies": [
+      "Communication Pedagogy",
+      "organizational communication",
+      "Qualitative Research Methodology",
+      "Social Change Organizing",
+      "women and leadership"
+    ],
+    "Sociology": [
+      "aging",
+      "Family Caregiving"
+    ],
+    "Writing, Rhetoric, and Digital Studies": [
+      "Digital Portfolios",
+      "Digital Rhetoric",
+      "ePortfolios",
+      "Genre Studies",
+      "Reflection"
+    ],
+    "Mathematics and Statistics": [
+      "markov chains",
+      "optimal stochastic control",
+      "stochastic processes"
+    ],
+    "English": [
+      "contemporary fiction",
+      "creative nonfiction",
+      "creative writing",
+      "Fiction Writing"
+    ],
+    "Anthropology": [
+      "early cities",
+      "environment",
+      "landscape",
+      "urban populations"
+    ],
+    "Africana Studies": [
+      "african diaspora",
+      "Africana philosophy",
+      "atlantic history",
+      "civil rights",
+      "colonial history",
+      "human rights",
+      "justice",
+      "law",
+      "race",
+      "religion"
+    ],
+    "Applied Geographic Information": [
+      "application of artificial intelligence",
+      "computational science",
+      "geographic information science",
+      "intelligent agents",
+      "massive data analysis",
+      "modeling agent",
+      "open science",
+      "software agents",
+      "spatial complexity",
+      "spatial phenomena",
+      "spatial problems",
+      "spatial systems",
+      "virtual organization",
+      "air quality",
+      "atmospheric sciences",
+      "carbon cycle",
+      "climate change",
+      "global warming",
+      "lightning",
+      "paleoclimate",
+      "sustainability"
+    ],
+    "Philosophy": [
+      "big data ethics and politics",
+      "ethics",
+      "european political theory",
+      "hobbes",
+      "intellectual property rights",
+      "political philosophy",
+      "privacy",
+      "property theory",
+      "spinoza"
+    ]
+  },
+  "college-of-engineering": {
+    "Mechechanical Engineering": [
+      "advanced metrology",
+      "diamond turned optics",
+      "precision manufacturing",
+      "self-calibration techniques",
+      "surface form metrology"
+    ],
+    "Engineering Tech & Constr Mgmt": [
+      "continuous improvement",
+      "earth structures",
+      "educational pedagogy",
+      "finite element analysis",
+      "geotechnical engineering",
+      "outcomes assessment",
+      "probabilistic modeling",
+      "risk analysis"
+    ],
+    "Electrical & Computer Engineering": [
+      "device physics",
+      "electrochemistry",
+      "fabrication",
+      "modeling",
+      "opto-electronic devices",
+      "solar cells",
+      "surface passivation",
+      "discrete-time signal processing",
+      "electric machinery"
+    ],
+    "Systems Engineering": [
+      "business case development",
+      "business forecasting",
+      "customer-oriented product development",
+      "customer-oriented strategic planning",
+      "global product development",
+      "global product innovation",
+      "global product marketing",
+      "market analyses studies",
+      "market feasibility studies",
+      "quality management",
+      "energy forecasting",
+      "energy trading",
+      "power systems operations",
+      "power systems planning",
+      "renewable integration",
+      "retail forecasting",
+      "revenue optimization",
+      "risk management"
+    ],
+    "Civil and Environmental Engineering": [
+      "bridge monitoring",
+      "co2 sequestration",
+      "coal mines",
+      "damage detection",
+      "gas mines",
+      "in oil mines",
+      "modal testing",
+      "remote sensing",
+      "soil dynamics"
+    ]
+  }
+}

@@ -18,7 +18,9 @@ function HomePage(props) {
             else setData(data.data.data)
         }
         getData()
-    }, [])
+    }, [viewFaculty])
+
+
 
     return (<>
         <PageTemplate highLight='0' {...props} />
@@ -40,7 +42,8 @@ const options = {
     autoResize: true,
     clickToUse: true,
     edges: {
-        color: "#000000"
+        color: "#000000",
+        length: 400
     },
     groups: {
         'college-of-business': {},
@@ -58,13 +61,21 @@ const options = {
         navigationButtons: true,
     },
     physics: {
+        enabled:true,
         barnesHut: {
-            centralGravity: 0.0001,
-            avoidOverlap: .65
+            centralGravity: 0.01,
+            avoidOverlap: .7
         },
         repulsion: {
-            centralGravity: 0.0001
-        }
+            nodeDistance: 1,
+            centralGravity: 0.01,
+            springLength: 500,
+            springConstant: 50
+        },
+        stabilization: {
+            iterations: 10
+        },
+        maxVelocity: 50
     }
 }
 

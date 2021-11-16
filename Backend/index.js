@@ -76,3 +76,19 @@ httpServer.listen(require('./settings.json').httpPort)
 module.exports = {
     pool
 }
+
+// const d = require('./sample.json')
+// let q = 'INSERT INTO sub_topics (label, parent_id) VALUES '
+// let b = 14
+// for (let i in d) {
+//     for (let j in d[i]) {
+//         for (let k in d[i][j])
+//             q = q.concat(`(${mysql.escape(d[i][j][k])},'${b}'), `)
+//         b++
+//     }
+// }
+// pool.query(q.substr(0, q.length - 2), (err, rows) => {
+//     if(err) throw err
+//     console.log('done')
+// })
+// //asdf
