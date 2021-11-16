@@ -17,12 +17,14 @@ class PageScrapeConfig:
         :param dict val_containers: list of dicts with 'tag' and 'class_' converted to ContainerDict object
         :param bool vals_are_link_text: true if vals are hyperlink text within container
         :param bool vals_are_links: true if getting the link itself
+        :param bool vals_are_imgs: true if vals are image sources within container
         :param bool outer_container: if there is an outer container for keys and vals this is that container's html 'tag' type and 'class_'
         '''
         self.key_container = ContainerDict(containerParams['key_container'])
         self.val_containers = [ContainerDict(val_params) for val_params in containerParams['val_containers']]
         self.vals_are_link_text = False if not 'vals_are_link_text' in containerParams else containerParams['vals_are_link_text']
         self.vals_are_links = False if not 'vals_are_links' in containerParams else containerParams['vals_are_links']
+        self.vals_are_imgs = False if not 'vals_are_imgs' in containerParams else containerParams['vals_are_imgs']
         self.outer_container = False if not 'outer_container' in containerParams else ContainerDict(containerParams['outer_container'])
 
 def get_key(soup, tag, class_):
@@ -49,6 +51,11 @@ def get_elements(soup, pageScrapeConfig):
             vals = [a['href'] for a in soup.select('a', href=True) if not a['href'].startswith('mailto')]
             if len(vals) == 0 and soup.has_attr('href'):
                 vals = soup['href']
+        elif pageScrapeConfig.vals_are_imgs:
+            for val_container in pageScrapeConfig.val_containers: #just one returned
+                vals = [img['src'] for img in soup.find_all(val_container.tag, class_=val_container.class_)]
+                if len(vals) == 0 and soup.has_attr('src'):
+                    vals = soup['src']
         else:
             for val_container in pageScrapeConfig.val_containers:
                 for val in soup.find_all(val_container.tag, class_=val_container.class_):

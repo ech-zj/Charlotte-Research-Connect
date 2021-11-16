@@ -1,0 +1,130 @@
+.acalog-catalog .acalog-catalog-container,
+.acalog-course .acalog-course-container,
+.acalog-program .acalog-program-container,
+.acalog-entity .acalog-entity-container,
+.acalog-filter .acalog-filter-container,
+.acalog-page .acalog-page-container,
+.acalog-program-core-course .acalog-program-core-course-container,
+.acalog-permalink-container {
+	display: none;
+}
+
+.acalog-permalink-hidetitle > .acalog-course-title,
+.acalog-permalink-hidetitle > .acalog-program-name,
+.acalog-permalink-hidetitle > .acalog-entity-name,
+.acalog-permalink-hidetitle > .acalog-filter-name,
+.acalog-permalink-hidetitle > .acalog-page-name {
+	display: none;
+}
+
+.acalog-permalink-inline.acalog-permalink-open > .acalog-permalink-link {
+	display: none;
+}
+
+.acalog-catalog.acalog-catalog-open .acalog-catalog-container,
+.acalog-course.acalog-course-open .acalog-course-container,
+.acalog-program.acalog-program-open .acalog-program-container,
+.acalog-entity.acalog-entity-open .acalog-entity-container,
+.acalog-filter.acalog-filter-open .acalog-filter-container,
+.acalog-page.acalog-page-open .acalog-page-container,
+.acalog-program-core-course.acalog-program-core-course-open .acalog-program-core-course-container,
+.acalog-permalink.acalog-permalink-open > .acalog-permalink-container {
+	display: block;
+	z-index: 1;
+}
+
+.acalog-permalink {
+	display: inline-block;
+}
+
+.acalog-catalog-link,
+.acalog-course-link,
+.acalog-program-link,
+.acalog-entity-link,
+.acalog-filter-link,
+.acalog-page-link,
+.acalog-program-core-course-link,
+.acalog-permalink-showhide > .acalog-permalink-link {
+	padding-left: 3px;
+}
+
+.acalog-catalog-open > .acalog-catalog-link,
+.acalog-course-open > .acalog-course-link,
+.acalog-program-open > .acalog-program-link,
+.acalog-entity-open > .acalog-entity-link,
+.acalog-filter-open > .acalog-filter-link,
+.acalog-page-open > .acalog-page-link,
+.acalog-program-core-course-open > .acalog-program-core-course-link,
+.acalog-permalink-open.acalog-permalink-showhide > .acalog-permalink-link {
+	display: inline-block;
+	margin-top: -4px;
+	padding: 3px;
+	border: 1px solid #444444;
+	border-bottom: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background-color: #FFFFFF;
+}
+
+.acalog-course-container,
+.acalog-program-container,
+.acalog-entity-container,
+.acalog-filter-container,
+.acalog-page-container,
+.acalog-program-core-course-container,
+.acalog-permalink-showhide > .acalog-permalink-container {
+	margin-top: -1px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #444444;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 3px;
+	background-color: #FFFFFF;
+}
+
+.acalog-permalink-tooltip > .acalog-permalink-container {
+	padding: 10px;
+	border: 1px solid #444444;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	position: absolute;
+	background-color: #FFFFFF;
+}
+
+.acalog-close {
+	display: none;
+	margin-top: 10px;
+	margin-right: -11px;
+	padding: 3px;
+	border: 1px solid #444444;
+	border-top: none;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	float: right;
+	background-color: #FFFFFF;
+}
+
+.acalog-permalink-tooltip > .acalog-permalink-container > .acalog-close {
+	margin-right: -1px;
+	position: absolute;
+	right: 0;
+}
+
+.acalog-course-container > .acalog-close,
+.acalog-program-container > .acalog-close,
+.acalog-entity-container > .acalog-close,
+.acalog-filter-container > .acalog-close,
+.acalog-page-container > .acalog-close,
+.acalog-program-core-course-container > .acalog-close,
+.acalog-permalink-tooltip > .acalog-permalink-container > .acalog-close,
+.acalog-permalink-showhide > .acalog-permalink-container > .acalog-close {
+	display: inline-block;
+}
