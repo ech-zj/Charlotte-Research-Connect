@@ -59,6 +59,7 @@ app.use((req, res, next) => {
 app.use('/topics', require('./routes/Topics'))
 app.use('/user', require('./routes/User'))
 app.use('/faculty', require('./routes/Faculty'))
+app.use('/visuals', require('./routes/Visuals'))
 
 try {
     const httpsServer = https.createServer({
