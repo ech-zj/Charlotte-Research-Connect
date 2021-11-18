@@ -14,7 +14,7 @@ function TopicPage(props) {
             const data = await axios.get(`${settings.DevEnv ? settings.NoSSL : settings.APIBase}/topics/overview`)
                 .catch(er => { return { isErrored: true, er } })
             if (data.isErrored || !data.data) setTopics({ errored: true })
-            else setTopics(data.data)
+            else setTopics(data.data.sort((a, b) => a.label >= b.label ? 1 : -1))
         }
         getTopics()
     }, [])
@@ -41,7 +41,7 @@ function TopicPage(props) {
         if (data.isErrored || !data.data) return setSubTopics({ errored: true })
 
         // assume that data.data is an array
-        setSubTopics(data.data)
+        setSubTopics(data.data.sort((a, b) => a.label >= b.label ? 1 : -1))
     }
 
     return (<>

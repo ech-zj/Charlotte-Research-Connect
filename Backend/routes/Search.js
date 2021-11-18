@@ -22,7 +22,9 @@ Router.get('/:search', async (req, res) => {
     let results = []
     // Add DB queries to the promises array using same structure as current one
     let promises = [
-        promisify.query(`SELECT * FROM main_topics WHERE label = '${mysql.escape(search)}'`)
+        promisify.query(`SELECT * FROM main_topics WHERE Contains(label, ${mysql.escape(search)})`)
+            .then(rows => rows.forEach(row => { results.push(row) })),
+        promisify.query(`SELECT * FROM sub_topics WHERE Contains(label, ${mysql.escape(search)})`)
             .then(rows => rows.forEach(row => { results.push(row) }))
     ]
 
@@ -30,6 +32,8 @@ Router.get('/:search', async (req, res) => {
 
     // Wait for all queries above
     await Promise.all(promises)
+
+    return res.status(200).json({ data: results })
 
 })
 

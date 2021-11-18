@@ -40,7 +40,7 @@ function FacultyPage(props) {
             <div className='FacultyBox' style={{ cursor: 'pointer' }} onClick={() => { setSelectedFaculty(f.id) }}>
                 {f.image ? <img src={f.image} alt={`${f.name}`} height='200px' /> : <></>}
                 <h2>{f.first_name} {f.last_name}</h2>
-                {college === 'All' ? <h2>{f.college}</h2> : <></>}
+                {college === 'All' ? <h2>{f.college_name}</h2> : <></>}
                 <h2>{f.degree}</h2>
                 <h2>{f.concentration}</h2>
                 {f.url ? <a href={f.url} target='_blank' rel='noreferrer'>View Page</a> : <></>}
@@ -70,7 +70,8 @@ function FacultyPage(props) {
                     :
 
                     college ? faculty.map(f => {
-                        if (f.college === college || college === 'All') return renderFaclty(f)
+                        console.log(f)
+                        if (f.college_name === college || college === 'All') return renderFaclty(f)
                         else return <></>
                     }) :
                         colleges.map(c => { return renderColleges(c) })

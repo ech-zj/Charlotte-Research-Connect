@@ -1,5 +1,6 @@
 .FacultyPage {
     position: absolute;
+    display: flex;
     top: 3rem;
     left: 0;
     width: 100vw;
@@ -11,7 +12,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+    min-height: min-content;
+    max-height: 96vh;
 }
 
 .FacultyBox {
