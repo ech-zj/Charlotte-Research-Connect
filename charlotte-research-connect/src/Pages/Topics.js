@@ -27,7 +27,7 @@ function TopicPage(props) {
 
     const renderSubTopic = (topic) => {
         return (
-            <h2 key={topic.id} className='Topic' onClick={() => alert('yahoo')}>{topic.label}</h2>
+            <h2 key={topic.id} className='Topic' onClick={() => alert('TBI')}>{topic.label}</h2>
         )
     }
 

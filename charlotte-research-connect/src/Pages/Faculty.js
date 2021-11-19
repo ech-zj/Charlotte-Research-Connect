@@ -4,13 +4,13 @@ import '../css/Faculty.css'
 import PageTemplate from '../Components/PageTemplate'
 const settings = require('../settings.json')
 const colleges = [
-    { text: 'Computing and Informatics', id: 'College of Computing and Informatics' },
-    { text: 'Engineering', id: 'William States Lee College of Engineering' },
-    { text: 'Liberal Arts and Sciences', id: 'College of Liberal Arts and Sciences' },
-    { text: 'Health and Human Services', id: 'College of Health and Human Services' },
     { text: 'Arts + Architecture', id: 'College of Arts + Architecture' },
-    { text: 'Education', id: 'Cato College of Education' },
     { text: 'Business', id: 'Belk College of Business' },
+    { text: 'Computing and Informatics', id: 'College of Computing and Informatics' },
+    { text: 'Education', id: 'Cato College of Education' },
+    { text: 'Engineering', id: 'William States Lee College of Engineering' },
+    { text: 'Health and Human Services', id: 'College of Health and Human Services' },
+    { text: 'Liberal Arts and Sciences', id: 'College of Liberal Arts and Sciences' },
 ]
 
 function FacultyPage(props) {
@@ -24,7 +24,7 @@ function FacultyPage(props) {
             const data = await axios.get(`${settings.DevEnv ? settings.NoSSL : settings.APIBase}/faculty/all`)
                 .catch(er => { return { isErrored: true, er } })
             if (data.isErrored || !data.data || !data.data.data) { console.log(data.er.response); setFaculty({ errored: true }) }
-            else setFaculty(data.data.data)
+            else setFaculty(data.data.data.sort((a, b) => a.first_name >= b.first_name ? 1 : -1))
         }
         getFaculty()
     }, [])
