@@ -9,6 +9,13 @@ import '../css/Template.css';
 
 function PageTemplate(props) {
     const history = useHistory()
+    const searchHandler = () => {
+        let v = document.getElementById('searchField').value;
+        if (v) {
+            if (props.setSearch) props.setSearch(v)
+            history.push(`/search?q=${v}`)
+        }
+    }
     return (
         <div className="App">
             {props.highLight === '3' ?
@@ -26,7 +33,12 @@ function PageTemplate(props) {
                     <p className={props.highLight === '3' ? 'active' : ''} onClickCapture={(e) => history.push('/about')}>About</p>
                 </div>
                 <div className='Search'>
-                    <SearchIcon size='2rem' />
+                    <div className='SearchBar'>
+                        <input id='searchField' type='text' placeholder='Search...' onKeyDown={e => { if (e.key === 'Enter') searchHandler() }} />
+                    </div>
+                    <div className='SearchContainer' onClick={() => searchHandler()}>
+                        <SearchIcon size='2rem' />
+                    </div>
                 </div>
             </div>
         </div >

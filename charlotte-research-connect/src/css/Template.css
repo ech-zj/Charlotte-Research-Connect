@@ -76,8 +76,41 @@
 }
 
 .Search {
+    display: flex;
+    align-items: center;
+    justify-content: right;
     margin: 1rem;
-    padding: 0
+}
+
+.SearchBar input {
+    background-color: #1b1b1be3;
+    border: none;
+    border-style: none;
+    border-radius: .2em;
+    font-size: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1), 0 5px 10px -3px rgba(0, 0, 0, .13);
+    outline: none;
+    padding: .2em;
+    margin-right: .5em;
+}
+
+.Search .SearchBar {
+    transition: ease-in-out .4s;
+}
+
+.Search:hover .SearchBar {
+    display: inline-block;
+}
+
+.Search:hover .SearchContainer * {
+    color: #B9975B;
+    transition: ease-in-out .4s;
+}
+
+.SearchContainer {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 * {

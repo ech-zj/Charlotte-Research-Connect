@@ -26,6 +26,7 @@
     text-align: center;
     cursor: pointer;
     transition: ease-in-out .25s;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1), 0 5px 10px -3px rgba(0, 0, 0, .13);
 }
 
 .FacultyBox * {

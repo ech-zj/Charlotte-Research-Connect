@@ -1,0 +1,35 @@
+.SearchPage {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100vw;
+}
+
+.SearchPane {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.ResultArea {
+    margin: 1rem;
+    padding: 1rem;
+    background: #1b1b1b67;
+    border-radius: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: ease-in-out .25s;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1), 0 5px 10px -3px rgba(0, 0, 0, .13);
+}
+
+.ResultArea:hover {
+    background: #B9975B67;
+    transition: ease-in-out .25s;
+}
+
+.ResultArea * {
+    margin: .5rem 2rem;
+}
