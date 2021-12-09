@@ -19,6 +19,7 @@
     "firebase-admin": "^10.0.0",
     "firebase-tools": "^9.23.1",
     "mysql": "^2.18.1",
+    "node-google-oauth2": "^1.0.2",
     "nodemon": "^2.0.14"
   }
 }
