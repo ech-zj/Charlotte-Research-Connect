@@ -7,6 +7,9 @@ const cors = require('cors')
 const rateLimit = require('express-rate-limit')
 const mysql = require('mysql')
 const { pathToFileURL } = require('url')
+const firebase = require('firebase-admin')
+const credentials = require()
+const authMiddleware = require('./auth-middleware')
 
 // Globals
 const app = express()
@@ -42,6 +45,7 @@ const apiLimit = rateLimit({
     max: 50 //50 requests
 })
 app.use('/', apiLimit)
+app.use('/a/', authMiddleware)
 
 // Request Logging
 app.use((req, res, next) => {
@@ -57,10 +61,20 @@ app.use((req, res, next) => {
 // app.use('/route', require('./routes/RouteFile'))
 // points localhost:80/route -> ./routes/RouteFile
 app.use('/topics', require('./routes/Topics'))
-app.use('/user', require('./routes/User'))
 app.use('/faculty', require('./routes/Faculty'))
 app.use('/visuals', require('./routes/Visuals'))
 app.use('/search', require('./routes/Search'))
+
+
+// Create Authorized User Route
+const AuthRouter = express.Router()
+app.use('/a/', authMiddleware)
+app.use('/a/', AuthRouter)
+
+// Assign Routers to Routes
+app.use('main', require('./routes/Auth/MainTopic'))
+app.use('user', require('./routes/Auth/User'))
+
 
 try {
     const httpsServer = https.createServer({
