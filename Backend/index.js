@@ -92,18 +92,17 @@ module.exports = {
     pool
 }
 
-// const d = require('./sample.json')
-// let q = 'INSERT INTO sub_topics (label, parent_id) VALUES '
-// let b = 14
+// const d = require('./faculty-filtered.json')
 // for (let i in d) {
-//     for (let j in d[i]) {
-//         for (let k in d[i][j])
-//             q = q.concat(`(${mysql.escape(d[i][j][k])},'${b}'), `)
-//         b++
+//     for (let j in d[i]['faculty-links']) {
+//         let url = d[i]['faculty-links'][j]
+//         let name = j.split(' ')
+//         let fn = name.shift()
+//         let ln = name.map(m => m).join(' ')
+//         pool.query(`UPDATE users SET url = ${mysql.escape(url)} WHERE last_name = ${mysql.escape(ln)} AND first_name = ${mysql.escape(fn)} AND college_name = ${mysql.escape(i)}`, (err, rows) => {
+//             if (err) throw err
+//             if(rows.affectedRows < 1) console.log(fn, ln)
+//             // console.log(rows)
+//         })
 //     }
 // }
-// pool.query(q.substr(0, q.length - 2), (err, rows) => {
-//     if(err) throw err
-//     console.log('done')
-// })
-// //asdf
