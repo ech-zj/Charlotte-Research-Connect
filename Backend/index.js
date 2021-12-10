@@ -70,8 +70,8 @@ app.use('/search', require('./routes/Search'))
 
 // Create Authorized User Route
 const AuthRouter = express.Router()
-app.use('/a/', authMiddleware)
-app.use('/a/', AuthRouter)
+AuthRouter.use('/a/', authMiddleware)
+AuthRouter.use('/a/', AuthRouter)
 
 // Assign Routers to Routes
 app.use('main', require('./routes/Auth/MainTopic'))
