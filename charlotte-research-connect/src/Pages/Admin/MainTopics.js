@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import PageTemplate from '../../Components/Admin Template'
-// import CollegeService from '../../Services/Colleges'
+import MainService from '../../Services/Main'
 
 const settings = require('../../settings.json')
 
@@ -25,9 +25,9 @@ function MainTopicsPage(props) {
 
         if (!formData.id || !formData.change || !formData.values) return e.target.classList.add('invalid')
 
-        // const token = 'tbi'
-        // let res = await CollegeService.edit(formData, token)
-        // if (res.isErrored) return e.target.classlist.add('invalid')
+        const token = 'tbi'
+        let res = await MainService.edit(formData, token)
+        if (res.isErrored) return e.target.classlist.add('invalid')
     }
 
     function handleKeyDown(id, e) {
