@@ -18,7 +18,7 @@ function CollegesPage(props) {
     }, [])
 
     async function handleInputChange(id, e) {
-        if(e.target.classList.includes('invalid')) e.target.classList.remove('invalid')
+        if(e.target.classList.contains('invalid')) e.target.classList.remove('invalid')
         let formData = { id, change: null, values: null }
         formData.change = e.target.id.split('-')[1]
         formData.values = e.target.value

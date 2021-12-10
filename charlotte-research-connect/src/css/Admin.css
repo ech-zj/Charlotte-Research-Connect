@@ -9,12 +9,14 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    overflow:scroll;
 }
 
 .rows {
     position: relative;
+    height:100%;
     white-space: nowrap;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 .rows th,

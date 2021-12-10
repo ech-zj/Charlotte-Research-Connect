@@ -66,16 +66,21 @@ app.use('/topics', require('./routes/Topics'))
 app.use('/faculty', require('./routes/Faculty'))
 app.use('/visuals', require('./routes/Visuals'))
 app.use('/search', require('./routes/Search'))
+app.use('/a/colleges', require('./routes/Auth/College'))
+app.use('/a/faculty', require('./routes/Auth/Faculty'))
 
 
 // Create Authorized User Route
 const AuthRouter = express.Router()
-AuthRouter.use('/a/', authMiddleware)
-AuthRouter.use('/a/', AuthRouter)
 
 // Assign Routers to Routes
-app.use('main', require('./routes/Auth/MainTopic'))
-app.use('user', require('./routes/Auth/User'))
+AuthRouter.use('main', require('./routes/Auth/MainTopic'))
+AuthRouter.use('user', require('./routes/Auth/User'))
+// AuthRouter.use('colleges', require('./routes/Auth/College'))
+AuthRouter.use('sub', require('./routes/Auth/User'))
+
+app.use('/a/', authMiddleware)
+app.use('/a/', AuthRouter)
 
 
 try {

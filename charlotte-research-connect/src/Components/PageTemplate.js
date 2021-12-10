@@ -24,7 +24,7 @@ function PageTemplate(props) {
             <CookieConsent background={'#000'} color={'#fff'}>This site uses cookies</CookieConsent>
             <div className='TopBar'>
                 <div className='AccountNav'>
-                    <PersonIcon />
+                    <PersonIcon style={{cursor:'pointer'}} onClickCapture={(e) => history.push('/login')}/>
                 </div>
                 <div className='PageNav'>
                     <p className={props.highLight === '0' ? 'active' : ''} onClickCapture={(e) => history.push('/')}>Home</p>

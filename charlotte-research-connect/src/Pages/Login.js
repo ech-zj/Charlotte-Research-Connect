@@ -1,14 +1,17 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom';
 import PageTemplate from '../Components/PageTemplate'
 import { ReactComponent as GoogleLogo } from '../Google.svg';
 import UserService from '../Services/User'
 import '../css/Login.css'
 
 function LoginPage(props) {
+    const history = useHistory()
     async function handleLogin(jw) {
         console.log(jw)
         UserService.verify(jw.tokenId)
+        history.push('/a/home')
     }
 
 
