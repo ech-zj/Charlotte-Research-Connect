@@ -1,5 +1,5 @@
 const firebase = require("firebase-admin");
-const key = require("./charlotte-research-connect-key.json");
+const key = require("../charlotte-research-connect-key.json");
 
 firebase.initializeApp({
     credential: firebase.credential.cert(key),

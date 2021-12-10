@@ -6,13 +6,13 @@ const Auth = new GoogleOAuth2(settings.googleAuth);
 
 function authMiddleware(req, res, next) {
     async function verify() {
-        // const payload = await Auth.getGoogleAccountFromCode(req.headers.authorization.split(' ')[1]);
-        // console.log(payload)
+        const payload = await Auth.getGoogleAccountFromCode(req.headers.authorization.split(' ')[1]);
+        console.log(payload)
         next()
     }
 
     verify()
-    return
+
 
     const headerToken = request.headers.authorization;
 
@@ -29,7 +29,7 @@ function authMiddleware(req, res, next) {
             return next()
         })
         .catch((e) => { console.log(e); return response.status(403).json({ message: "Could not authorize" }) });
-
+        return
 }
 
 module.exports = authMiddleware;

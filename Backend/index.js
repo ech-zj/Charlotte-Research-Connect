@@ -76,8 +76,8 @@ const AuthRouter = express.Router()
 // Assign Routers to Routes
 AuthRouter.use('main', require('./routes/Auth/MainTopic'))
 AuthRouter.use('user', require('./routes/Auth/User'))
-// AuthRouter.use('colleges', require('./routes/Auth/College'))
-AuthRouter.use('sub', require('./routes/Auth/User'))
+// // AuthRouter.use('colleges', require('./routes/Auth/College'))
+// AuthRouter.use('sub', require('./routes/Auth/User'))
 
 app.use('/a/', authMiddleware)
 app.use('/a/', AuthRouter)
