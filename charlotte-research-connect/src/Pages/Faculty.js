@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 import '../css/Faculty.css'
 import PageTemplate from '../Components/PageTemplate'
 const settings = require('../settings.json')
@@ -17,6 +18,7 @@ function FacultyPage(props) {
     const [college, setCollege] = useState(null)
     const [faculty, setFaculty] = useState([])
     const [selectedFaculty, setSelectedFaculty] = useState(null)
+    const history = useHistory()
 
     useEffect(() => {
         //this might move to load on college selection depending on performance
@@ -37,7 +39,7 @@ function FacultyPage(props) {
 
     const renderFaclty = f => {
         return (
-            <div className='FacultyBox' style={{ cursor: 'pointer' }} onClick={() => { setSelectedFaculty(f.id) }}>
+            <div className='FacultyBox' style={{cursor:'unset'}}>
                 {f.image ? <img src={f.image} alt={`${f.name}`} height='200px' /> : <></>}
                 <h2>{f.first_name} {f.last_name}</h2>
                 {college === 'All' ? <h2>{f.college_name}</h2> : <></>}

@@ -19,7 +19,7 @@ function LoginPage(props) {
         <div>
             <PageTemplate />
             <div className='LoginPanel'>
-                <div style={{width:'400px', height: '400px'}}><GoogleLogo/></div>
+                <div style={{width:'250px', height: '250px', marginBottom:'4rem'}}><GoogleLogo/></div>
                 <GoogleLogin
                     render={renderProps => (
                         <button onClick={renderProps.onClick}>Login with Google</button>

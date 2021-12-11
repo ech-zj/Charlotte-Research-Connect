@@ -27,7 +27,7 @@ function MainTopicsPage(props) {
 
         const token = 'tbi'
         let res = await MainService.edit(formData, token)
-        if (res.isErrored) return e.target.classlist.add('invalid')
+        if (res.isErrored) return e.target.classList.add('invalid')
     }
 
     function handleKeyDown(id, e) {

@@ -27,7 +27,7 @@ function FacultyAdminPage(props) {
 
         const token = 'tbi'
         let res = await FacultyService.edit(formData, token)
-        if (res.isErrored) return e.target.classlist.add('invalid')
+        if (res.isErrored) return e.target.classList.add('invalid')
     }
 
     function handleKeyDown(id, e) {
@@ -35,50 +35,60 @@ function FacultyAdminPage(props) {
     }
 
     function renderRow(row) {
+        console.log(row)
         return (<tr key={row.id}>
             <td><input type='text'
+                placeholder='Email'
                 defaultValue={row.email}
                 id={`${row.id}-email`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
+                placeholder='Phone'
                 defaultValue={row.phone}
                 id={`${row.id}-phone`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
+                placeholder='Image URL'
                 defaultValue={row.image}
                 id={`${row.id}-image`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
+                placeholder='Concentration'
                 defaultValue={row.concentration}
                 id={`${row.id}-concentration`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
+                placeholder='Degree'
                 defaultValue={row.degree}
                 id={`${row.id}-degree`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
-                defaultValue={row.phone}
-                id={`${row.id}-phone`}
+                placeholder='College'
+                defaultValue={row.college_name}
+                id={`${row.id}-college_name`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
-                defaultValue={row.phone}
-                id={`${row.id}-phone`}
+                placeholder='Webpage URL'
+                defaultValue={row.url}
+                id={`${row.id}-url`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
-                defaultValue={row.phone}
-                id={`${row.id}-phone`}
+                placeholder='Forst Name'
+                defaultValue={row.first_name}
+                id={`${row.id}-first_name`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
             <td><input type='text'
-                defaultValue={row.phone}
-                id={`${row.id}-phone`}
+                placeholder='Last Name'
+                defaultValue={row.last_name}
+                id={`${row.id}-last_name`}
                 onBlur={e => handleInputChange(row.id, e)}
                 onKeyDown={e => handleKeyDown(row.id, e)} /></td>
         </tr>)
@@ -90,8 +100,15 @@ function FacultyAdminPage(props) {
             <table className='rows'>
                 <thead>
                     <tr>
-                        <th>Topic Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Image</th>
+                        <th>Concentration</th>
+                        <th>Degree</th>
                         <th>College</th>
+                        <th>URL</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                     </tr>
                 </thead>
                 <tbody>
