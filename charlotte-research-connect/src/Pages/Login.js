@@ -9,7 +9,6 @@ import '../css/Login.css'
 function LoginPage(props) {
     const history = useHistory()
     async function handleLogin(jw) {
-        console.log(jw)
         UserService.verify(jw.tokenId)
         history.push('/a/home')
     }
@@ -28,6 +27,7 @@ function LoginPage(props) {
                     buttonText="Login with Google"
                     onSuccess={handleLogin}
                     cookiePolicy={'single_host_origin'}
+                    redirectUri='https://charlotte-research-connect.web.app/a/home'
                 />
             </div>
 
