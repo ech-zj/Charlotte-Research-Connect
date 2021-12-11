@@ -6,15 +6,16 @@ const Auth = new GoogleOAuth2(settings.googleAuth);
 
 function authMiddleware(req, res, next) {
     async function verify() {
-        const payload = await Auth.getGoogleAccountFromCode(req.headers.authorization.split(' ')[1]);
-        console.log(payload)
+        // const payload = await Auth.getGoogleAccountFromCode(req.headers.authorization.split(' ')[1]);
+        // console.log(payload)
         next()
     }
 
     verify()
 
+    return
 
-    const headerToken = request.headers.authorization;
+    const headerToken = req.headers.authorization;
 
     // Data validation
     if (!headerToken) return response.status(400).json({ message: "No token provided" });
