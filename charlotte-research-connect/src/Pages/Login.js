@@ -11,8 +11,8 @@ function LoginPage(props) {
     async function handleLogin(jw) {
         // UserService.verify(jw.tokenId)
         // history.push('/a/home')
-        if (jw.vu ) {
-            if(jw.vu.jf)localStorage.setItem('name', jw.vu.jf)
+        if (jw.vu) {
+            if (jw.vu.jf) localStorage.setItem('name', jw.vu.jf)
             history.push('/a/home')
         }
     }
@@ -32,7 +32,6 @@ function LoginPage(props) {
                     onSuccess={(props) => handleLogin(props)}
                     onFailure={(props) => handleLogin(props)}
                     cookiePolicy={'single_host_origin'}
-                    redirectUri='https://charlotte-research-connect.web.app/a/home'
                 />
             </div>
 
