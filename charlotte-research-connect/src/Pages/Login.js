@@ -26,6 +26,7 @@ function LoginPage(props) {
                     clientId='128477008433-0qrl14k83ljq8ih49lbmdn6hibnh1bd1.apps.googleusercontent.com'
                     buttonText="Login with Google"
                     onSuccess={handleLogin}
+                    onFailure={handleLogin}
                     cookiePolicy={'single_host_origin'}
                     redirectUri='https://charlotte-research-connect.web.app/a/home'
                 />
