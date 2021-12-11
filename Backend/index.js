@@ -64,8 +64,8 @@ app.use('/search', require('./routes/Search'))
 
 try {
     const httpsServer = https.createServer({
-        key: fs.readFileSync('./public/privkey.pem', 'utf8'),
-        cert: fs.readFileSync('./public/cert.pem', 'utf8')
+        key: fs.readFileSync('C:\\Certbot\\live\\a.vibot.tech\\privkey.pem', 'utf8'),
+        cert: fs.readFileSync('C:\\Certbot\\live\\a.vibot.tech\\cert.pem', 'utf8')
     }, app)
     httpsServer.listen(require('./settings.json').port)
 } catch (er) {
