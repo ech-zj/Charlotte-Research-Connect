@@ -26,29 +26,30 @@
 
 # Installation Requirements
 
-Node.js (Created on [v16](https://nodejs.org/en/))
+First you have to install Node.js which can be found on => (Created on [v16](https://nodejs.org/en/))
 
 # Setup
 
+## Back
 
-## Front
+When you open the project on an IDE Navigate to `/Backend` in cmd/bash using `cd` command then
 
-Navigate to: `/charlotte-research-connect`
+Execute `npm i` in cmd/bash to update all installed files and then
 
-Execute `npm i` in cmd/bash
+Execute `nodemon .` in cmd/bash to start the backend development server
+
+* if [nodemon](https://www.npmjs.com/package/nodemon) not installed `npm install -g nodemon`
+## Front-end
+After starting up the backend use `cd ../` command to go back to the root directory and Navigate to: `/charlotte-research-connect` using `cd` command then 
+
+Execute `npm i` in cmd/bash to update all installed files and then
 
 Execute `npm start` in cmd/bash to start development server
 
-## Back
-
-Navigate to `/Backend`
-
-Execute `npm i` in cmd/bash
-
-Execute `nodemon .` in cmd/bash to start development server
-
-* if [nodemon](https://www.npmjs.com/package/nodemon) not installed `npm install -g nodemon`
-
-
 ## Database
-TBD
+
+We are using MySQL for this website.
+
+
+
+
