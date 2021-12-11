@@ -8,7 +8,7 @@ const updateAbleColumns = [
 
 Router.get('/all', async (req, res) => {
     const { pool } = require('../../index.js');
-    pool.query('SELECT * FROM users LIMIT 10', (err, rows) => {
+    pool.query('SELECT * FROM users', (err, rows) => {
         if (err) return res.status(500).json({ message: err })
         return res.status(200).json(rows);
     });

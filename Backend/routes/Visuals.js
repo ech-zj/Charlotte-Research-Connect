@@ -6,7 +6,6 @@ const data = [{ temp: 'temp' }]
 const positions = [{ x: -3500, y: -3500 }, { x: -3500, y: 0 }, { x: -3500, y: 3500 }, { x: 0, y: -3500 }, { x: 0, y: 3500 }, { x: 3500, y: -3500 }, { x: 3500, y: 0 }, { x: 3500, y: 3500 }]
 
 Router.get('/main', async (req, res) => {
-    console.log('in')
     // Query db to get sub_topics
     const colleges = await promisify.query(`SELECT * FROM colleges`)// = query for colleges
     const main_topics = await promisify.query(`SELECT * FROM main_topics`)// = query for main_topics
@@ -40,8 +39,6 @@ Router.get('/main', async (req, res) => {
         }
         i++
     }
-
-    console.log(main_topics)
 
     for (let j of sub_topics) {
         // add the node here

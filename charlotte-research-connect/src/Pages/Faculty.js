@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
 import '../css/Faculty.css'
 import PageTemplate from '../Components/PageTemplate'
 const settings = require('../settings.json')
@@ -17,8 +16,6 @@ const colleges = [
 function FacultyPage(props) {
     const [college, setCollege] = useState(null)
     const [faculty, setFaculty] = useState([])
-    const [selectedFaculty, setSelectedFaculty] = useState(null)
-    const history = useHistory()
 
     useEffect(() => {
         //this might move to load on college selection depending on performance
