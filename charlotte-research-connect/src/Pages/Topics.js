@@ -27,7 +27,7 @@ function TopicPage(props) {
 
     const renderSubTopic = (topic) => {
         return (
-            <h2 key={topic.id} className='Topic' onClick={() => alert('TBI')}>{topic.label}</h2>
+            <h2 key={topic.id} className='Topic'>{topic.label}</h2>
         )
     }
 
@@ -48,7 +48,7 @@ function TopicPage(props) {
         <PageTemplate {...props} highLight='1' />
         <div className='TopicsPage'>
             <div className='TopicsContainer'>
-                <div style={{ display: 'inline-flex', alignItems: 'center', cursor: selectedTopic ? 'pointer' : 'auto' }} onClick={() => { if (selectedTopic) setSelectedTopic(null); setSubTopics([]); }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center' }} onClick={() => { if (selectedTopic) setSelectedTopic(null); setSubTopics([]); }}>
                     {selectedTopic ? <i className="material-icons" style={{ paddingRight: '.5rem' }}>arrow_back</i> : <></>}
                     <h1>{selectedTopic ? 'Back To Topics' : 'Topics'}</h1>
                 </div>

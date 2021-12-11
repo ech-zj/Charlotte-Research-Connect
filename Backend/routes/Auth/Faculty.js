@@ -3,7 +3,7 @@ const mysql = require('mysql')
 const Router = express.Router();
 
 const updateAbleColumns = [
-    'image', 'url', 'phone', 'email'
+    'image', 'url', 'phone', 'email', 'concentration', 'first_name', 'last_name', 'college_name', 'degree', 'email'
 ]
 
 Router.get('/all', async (req, res) => {
