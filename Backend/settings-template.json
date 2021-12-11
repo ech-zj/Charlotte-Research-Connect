@@ -1,0 +1,15 @@
+{
+    "port": "1313",
+    "httpPort": "1314",
+    "dbInfo": {
+        "host": "a.vibot.tech",
+        "user": "group19",
+        "password": "",
+        "database": "charlotte-research-connect"
+    },
+    "googleAuth": {
+        "clientId": "128477008433-0qrl14k83ljq8ih49lbmdn6hibnh1bd1.apps.googleusercontent.com",
+        "clientSecret": "",
+        "redirect": "https://charlotte-research-connect.web.app/auth"
+    }
+}

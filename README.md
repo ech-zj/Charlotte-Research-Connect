@@ -19,6 +19,11 @@
 * [Backlog](https://docs.google.com/document/d/13W5ec0oqaOgUdsd316qTUtD8_f5BoeLfLpBFMo5Nu1w/edit)
 * [Design Documentation](https://docs.google.com/document/d/1raWjttSwjOWhpbzYa_j4530Xr4ih_4IwqdBWXcbtvQo/edit)
 
+## Sprint 4
+
+* [Backlog](https://docs.google.com/spreadsheets/d/1fWVRERptES_lJ8f4_8DDgd9u3PE5W715/edit?usp=sharing&ouid=107839941656359800713&rtpof=true&sd=true)
+* [Elevator Pitch](https://youtu.be/rZrzMo-72UU)
+
 # Installation Requirements
 
 Node.js (Created on [v16](https://nodejs.org/en/))

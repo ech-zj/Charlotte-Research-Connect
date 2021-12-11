@@ -9,19 +9,19 @@ Router.get('/main', async (req, res) => {
     console.log('in')
     // Query db to get sub_topics
     const colleges = await promisify.query(`SELECT * FROM colleges`)// = query for colleges
-    const main_topics = await promisify.query(`SELECT * FROM main_topics`)// = query for sub_topics
+    const main_topics = await promisify.query(`SELECT * FROM main_topics`)// = query for main_topics
     const sub_topics = await promisify.query(`SELECT * FROM sub_topics`)// = query for sub_topics
 
     // Organize Data
-    const coll = {} //fuck this line bro
+    const coll = {}
     colleges.forEach((c, i) => { coll[c.id] = c });
     const mainTopics = {}
-    main_topics.forEach(c => { mainTopics[c.id] = c })
+    main_topics.forEach(c => { mainTopics[c.id] = c }) // goated line
 
     // Create data object and instantiate with college nodes
     const data = {
         nodes: colleges.map(c => { return { id: c.id, label: c.name, title: c.url, color: `${c.color}67`, group: c.group, font: '128px Montserrat white', shape: 'box', ...positions[c.id] } }),
-        edges: [] // goated line
+        edges: [] 
     }
 
 

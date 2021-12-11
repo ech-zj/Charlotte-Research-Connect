@@ -7,6 +7,11 @@ const cors = require('cors')
 const rateLimit = require('express-rate-limit')
 const mysql = require('mysql')
 const { pathToFileURL } = require('url')
+const firebase = require('firebase-admin')
+// const credentials = require()
+const authMiddleware = require('./auth-middleware')
+
+const GoogleOAuth2 = require("node-google-oauth2");
 
 // Globals
 const app = express()
@@ -42,6 +47,7 @@ const apiLimit = rateLimit({
     max: 50 //50 requests
 })
 app.use('/', apiLimit)
+app.use('/a/', authMiddleware)
 
 // Request Logging
 app.use((req, res, next) => {
@@ -57,10 +63,23 @@ app.use((req, res, next) => {
 // app.use('/route', require('./routes/RouteFile'))
 // points localhost:80/route -> ./routes/RouteFile
 app.use('/topics', require('./routes/Topics'))
-app.use('/user', require('./routes/User'))
 app.use('/faculty', require('./routes/Faculty'))
 app.use('/visuals', require('./routes/Visuals'))
 app.use('/search', require('./routes/Search'))
+app.use('/a/colleges', require('./routes/Auth/College'))
+app.use('/a/faculty', require('./routes/Auth/Faculty'))
+app.use('/a/main', require('./routes/Auth/MainAdmin'))
+app.use('/a/sub', require('./routes/Auth/SubAdmin'))
+
+
+// Create Authorized User Route
+const AuthRouter = express.Router()
+
+// Assign Routers to Routes
+
+app.use('/a/', authMiddleware)
+app.use('/a/', AuthRouter)
+
 
 try {
     const httpsServer = https.createServer({
@@ -78,18 +97,17 @@ module.exports = {
     pool
 }
 
-// const d = require('./sample.json')
-// let q = 'INSERT INTO sub_topics (label, parent_id) VALUES '
-// let b = 14
+// const d = require('./faculty-filtered.json')
 // for (let i in d) {
-//     for (let j in d[i]) {
-//         for (let k in d[i][j])
-//             q = q.concat(`(${mysql.escape(d[i][j][k])},'${b}'), `)
-//         b++
+//     for (let j in d[i]['faculty-links']) {
+//         let url = d[i]['faculty-links'][j]
+//         let name = j.split(' ')
+//         let fn = name.shift()
+//         let ln = name.map(m => m).join(' ')
+//         pool.query(`UPDATE users SET url = ${mysql.escape(url)} WHERE last_name = ${mysql.escape(ln)} AND first_name = ${mysql.escape(fn)} AND college_name = ${mysql.escape(i)}`, (err, rows) => {
+//             if (err) throw err
+//             if(rows.affectedRows < 1) console.log(fn, ln)
+//             // console.log(rows)
+//         })
 //     }
 // }
-// pool.query(q.substr(0, q.length - 2), (err, rows) => {
-//     if(err) throw err
-//     console.log('done')
-// })
-// //asdf
