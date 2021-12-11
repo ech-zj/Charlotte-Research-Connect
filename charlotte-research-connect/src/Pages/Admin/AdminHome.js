@@ -5,7 +5,7 @@ function HomePage(props) {
     return (<>
         <PageTemplate highLight='0' />
         <div className='AdminHome'>
-            <h1>Welcome</h1>
+            <h1>Welcome {localStorage.getItem('name') || ''}</h1>
         </div>
     </>)
 }
